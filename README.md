@@ -100,7 +100,7 @@ Import {func1, func2, func3} from "myPackage"
 ```
 I would like warn on it.
 
-The way I would like it to be 
+The way I would like it to be
 ```js
 Import {
     func1,

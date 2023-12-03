@@ -2,7 +2,11 @@ import React from "react";
 
 import "./DiagonalLine.scss";
 
-const DiagonalLine: React.FC = (props) => {
+interface DiagonalLineProps {
+    side: string;
+}
+
+const DiagonalLine: React.FC<DiagonalLineProps> = (props) => {
     const {side} = props;
 
     return (

@@ -5,9 +5,11 @@
             "@/*": ["src/*"],
             "@assets/*": ["src/assets/*"],
             "@components/*": ["src/components/*"],
+            "@parts/*": ["src/components/parts/*"],
             "@store/*": ["src/store/*"],
             "@slices/*": ["src/store/slices/*"],
             "@styles/*": ["src/styles/*"],
+            "@svg/*": ["src/components/svg/*"],
             "@tests/*": ["src/tests/*"],
             "@utilities/*": ["src/utilities/*"]
         },
