@@ -1,0 +1,28 @@
+{
+    "informationsList": [
+        {
+            "name": "premier",
+            "date": "2022-10-05T14:00:00"
+        },
+        {
+            "name": "premier",
+            "date": "2023-05-10T14:00:00"
+        },
+        {
+            "name": "premier",
+            "date": "2022-10-05T14:00:00"
+        },
+        {
+            "name": "premier",
+            "date": "2023-05-10T14:00:00"
+        },
+        {
+            "name": "premier",
+            "date": "2023-11-18T14:00:00"
+        }
+    ],
+    "countdownData": {
+        "name": "Trailer",
+        "date": "2023-12-05T14:00:00"
+    }
+}

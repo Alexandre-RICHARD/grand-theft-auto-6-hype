@@ -30,6 +30,7 @@ export const renderWithProviders = (
         ...renderOptions
     }: ExtendedRenderOptions = {}
 ) => {
+    // eslint-disable-next-line @stylistic/max-len
     const Wrapper = ({children}: PropsWithChildren<NonNullable<unknown>>): JSX.Element => {
         return (
             <Provider store={store}>

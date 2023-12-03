@@ -2,84 +2,82 @@
 @import "@styles/index.scss";
 
 #app {
-    margin: 0 auto;
-    padding: 15px;
-    font-size: 25px;
-    text-align: center;
+    .timeline-container {
+        position: relative;
+        background-color: #000000;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        overflow-y: hidden;
+        overflow-x: auto;
+        background: local repeat-x url("@assets/backgroundMiami.png");
 
-    .starter {
-        margin: auto;
-        max-width: 800px;
+        .timeline-box {
+            position: absolute;
+            height: 100%;
+            padding: 0 $timeline-margin;
+            display: flex;
+            align-items: center;
 
-        &-presentation {
-            margin: 8px 0;
+            .timeline {
+                position: absolute;
+                width: calc(100% - 2 * $timeline-margin);
+                height: $timeline-width;
+                background-color: #d6d6d6;
+                border-radius: 20px;
+                box-shadow:
+                    0 0 7px #ffffff,
+                    0 0 10px #ffffff,
+                    0 0 15px #feb26e,
+                    0 0 27px #dd829e,
+                    0 0 39px #7458a0;
 
-            .title {
-                font-size: 30px;
-                font-weight: 400;
-                margin: 8px;
-            }
-            .description {
-                text-align: left;
-            }
+                .timeline-event-box {
+                    position: absolute;
+                    width: $timeline-event-width;
+                    height: 363px;
+                    background-color: transparent;
 
-            .starter-features-list {
-                text-align: left;
-                padding-left: 40px;
+                    .content-box {
+                        position: absolute;
+                        border: 4px solid #d6d6d6;
+                        width: 100%;
+                        height: 250px;
+                        box-shadow:
+                            0 0 5px #feb26e,
+                            0 0 9px #dd829e;
 
-                li {
-                    text-align: justify;
-                    font-size: 20px;
-                    list-style: disc;
-                }
-            }
-        }
-
-        &-demonstration {
-            margin: 8px 0;
-
-            .form-change-number-step {
-                font-size: 20px;
-                margin: 6px auto;
-                width: fit-content;
-                padding: 3px;
-                border: 1px solid #000000;
-
-                input {
-                    max-width: 100px;
-                    text-align: center;
-                    background-color: #dddddd;
-                    padding: 4px;
-                    margin-left: 10px;
-                }
-            }
-
-            .counter-click {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 15px;
-                gap: 0 10px;
-
-                .counter-value {
-                    padding: 3px 8px;
-                    box-shadow: 0px 0px 6px 2px black;
-                    border-radius: 4px;
-                    min-width: 60px;
+                        .content {
+                            background-color: #00000099;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
                 }
 
-                .counter-button {
-                    width: 40px;
-                    height: 40px;
-                    line-height: 40px;
-                    margin: 0 6px;
-                    border-radius: 12px;
-                    font-size: 30px;
-                    font-weight: 500;
-                    border: 1px solid #888888;
+                .timeline-event-box.above {
+                    bottom: calc(50% - $timeline-width / 2);
 
-                    &:hover {
-                        background-color: #cccccc;
+                    .content-box {
+                        border-radius: 25px 0 25px 0;
+
+                        .content {
+                            border-radius: 20px 0 20px 0;
+                        }
+                    }
+                }
+
+                .timeline-event-box.below {
+                    display: flex;
+                    align-items: end;
+                    top: calc(50% - $timeline-width / 2);
+
+                    .content-box {
+                        border-radius: 0 25px 0 25px;
+
+                        .content {
+                            border-radius: 0 20px 0 20px;
+                        }
                     }
                 }
             }

@@ -1,9 +1,10 @@
 import {createSlice} from "@reduxjs/toolkit";
 import type {RootState} from "@store/store";
+import {informationsList, countdownData} from "@assets/informationData.json";
 
 interface InformationsList {
     name: string;
-    date: number;
+    date: string;
 }
 
 interface InformationsState {
@@ -15,11 +16,8 @@ interface InformationsState {
 }
 
 const initialState: InformationsState = {
-    "informationsList": [],
-    "countdownData": {
-        "name": "Trailer",
-        "date": "2023-12-05T14:00:00",
-    },
+    "informationsList": informationsList,
+    "countdownData": countdownData,
 };
 
 const informationsSlice = createSlice({
