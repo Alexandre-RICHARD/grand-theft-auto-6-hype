@@ -4,14 +4,19 @@ import EventText from "@parts/EventText/EventText";
 
 import "./EventContent.scss";
 
+interface EventLink {
+    name: string;
+    link: string;
+}
+
 interface InformationsList {
     name: string;
     type: string;
     isText: boolean;
     isMedia: boolean;
     date: string;
-    link: Array<string>;
-    description?: string;
+    link: Array<EventLink>;
+    description: string;
     text?: string;
     media?: string;
 }
@@ -49,7 +54,7 @@ const EventContent: React.FC<EventContentProps> = ({eventData}) => {
                             ? (
                                 <>
                                     <EventText
-                                        link={eventData.link[0]}
+                                        link={eventData.link[0].link}
                                         text={eventData.text}
                                     />
                                 </>

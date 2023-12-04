@@ -12,9 +12,15 @@ const Timeline: React.FC = () => {
     // const countdownData = useAppSelector(informationsState.CountDown);
 
     const invertMouseWheelDirection = (event: React.WheelEvent) => {
+        const scrollTarget = event.target as Node;
+        const eventBoxes = Array.from(
+            document.querySelectorAll(".content-box")
+        );
         const container = document.querySelector(".timeline-container");
         if (container) {
-            container.scrollLeft += event.deltaY;
+            if (!eventBoxes.some((el) => el.contains(scrollTarget))) {
+                container.scrollLeft += event.deltaY;
+            }
         }
     };
 

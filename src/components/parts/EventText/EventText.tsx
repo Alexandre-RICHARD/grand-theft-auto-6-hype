@@ -13,10 +13,12 @@ const EventText: React.FC<EventTextProps> = ({text, link}) => {
     };
     return (
         <blockquote cite={link}>
-            {addNewLine(text).map((partText: string, index: number) => (
-                <React.Fragment key={index}>
-                    <p key={index}>
-                        {partText}
+            {addNewLine(text).map((partText: string, i: number, array) => (
+                <React.Fragment key={i}>
+                    <p>
+                        {`${i === 0 ? "«" : ""} ${partText} ${
+                            i + 1 === array.length ? "»" : ""
+                        }`}
                     </p>
                     <br />
                 </React.Fragment>
