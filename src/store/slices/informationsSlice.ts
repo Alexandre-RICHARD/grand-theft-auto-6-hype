@@ -4,6 +4,11 @@ import {informationsList, countdownData} from "@assets/informationData.json";
 
 interface InformationsList {
     name: string;
+    type: string;
+    text: boolean;
+    media: boolean;
+    mediaLink: string;
+    link: string;
     date: string;
 }
 

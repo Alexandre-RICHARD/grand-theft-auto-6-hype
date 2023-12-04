@@ -1,24 +1,22 @@
 {
     "informationsList": [
         {
-            "name": "premier",
-            "date": "2022-10-05T14:00:00"
+            "name": "Annonce officiel du trailer 1",
+            "type": "tweet",
+            "text": false,
+            "media": true,
+            "mediaLink": "trailer1",
+            "link": "https://twitter.com/RockstarGames/status/1730587560726892883",
+            "date": "2023-12-01T14:00:00"
         },
         {
-            "name": "premier",
-            "date": "2023-05-10T14:00:00"
-        },
-        {
-            "name": "premier",
-            "date": "2022-10-05T14:00:00"
-        },
-        {
-            "name": "premier",
-            "date": "2023-05-10T14:00:00"
-        },
-        {
-            "name": "premier",
-            "date": "2023-11-18T14:00:00"
+            "name": "Annonce officiel du trailer 1",
+            "type": "tweet",
+            "text": false,
+            "media": true,
+            "mediaLink": "trailer1",
+            "link": "https://twitter.com/RockstarGames/status/1730587560726892883",
+            "date": "2023-12-01T14:00:00"
         }
     ],
     "countdownData": {

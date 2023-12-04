@@ -38,7 +38,7 @@ const Timeline: React.FC = () => {
             onWheel={invertMouseWheelDirection}
         >
             <div className="timeline">
-                {infoList.map((_event, index) => {
+                {infoList.map((event, index) => {
                     const eventGap = index * tlInterval + tlMargin;
                     return (
                         <div
@@ -52,7 +52,7 @@ const Timeline: React.FC = () => {
                                 side={index % 2 === 0 ? "above" : "below"}
                             />
                             <div className="content-box">
-                                <EventContent />
+                                <EventContent eventData={event} />
                             </div>
                         </div>
                     );

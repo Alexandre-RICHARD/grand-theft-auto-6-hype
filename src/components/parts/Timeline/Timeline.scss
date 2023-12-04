@@ -24,14 +24,14 @@
         .timeline-event-box {
             position: absolute;
             width: $timeline-event-width;
-            height: 363px;
+            height: calc($timeline-event-height + 115px);
             background-color: transparent;
 
             .content-box {
                 position: absolute;
-                border: 4px solid #d6d6d6;
+                border: $timeline-event-border-width solid #d6d6d6;
                 width: 100%;
-                height: 250px;
+                height: $timeline-event-height;
                 box-shadow:
                     0 0 5px #feb26e,
                     0 0 9px #dd829e;
