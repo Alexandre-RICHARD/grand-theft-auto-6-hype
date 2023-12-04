@@ -1,22 +1,26 @@
 {
     "informationsList": [
         {
-            "name": "Annonce officiel du trailer 1",
+            "name": "Le prochain opus en bonne voie",
             "type": "tweet",
-            "text": false,
-            "media": true,
-            "mediaLink": "trailer1",
-            "link": "https://twitter.com/RockstarGames/status/1730587560726892883",
-            "date": "2023-12-01T14:00:00"
+            "isText": true,
+            "isMedia": false,
+            "date": "2022-02-04T16:11:00",
+
+            "description": "Le premier message de Rockstar confirmant le développement actif du prochain opus de la série Grand Theft Auto",
+            "text": "Many of you have been asking about a new entry in the Grand Theft Auto series. \n With every new project, our goal is always to significantly move beyond what we've previously delivered. We're pleased to confirm that active development for the next entry in the series is underway. \n We look forward to sharing more as soon as we are ready, so please stay tuned to the Rockstar Newswire for official details. \n On behalf of our entire team, we thank you all for your support and cannot wait to step into the future with you!",
+            "link": "https://twitter.com/RockstarGames/status/1489617718009606150"
         },
         {
             "name": "Annonce officiel du trailer 1",
             "type": "tweet",
-            "text": false,
-            "media": true,
-            "mediaLink": "trailer1",
-            "link": "https://twitter.com/RockstarGames/status/1730587560726892883",
-            "date": "2023-12-01T14:00:00"
+            "date": "2023-12-01T14:00:00",
+            "isText": false,
+            "isMedia": true,
+
+            "text": "",
+            "media": "trailer1",
+            "link": "https://twitter.com/RockstarGames/status/1730587560726892883"
         }
     ],
     "countdownData": {

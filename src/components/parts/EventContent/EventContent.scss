@@ -2,9 +2,7 @@
 @import "@styles/index.scss";
 
 .content {
-    display: flex;
-    flex-direction: column;
-    background-color: #00000099;
+    background-color: #00000067;
     width: 100%;
     height: 100%;
     color: white;
@@ -12,25 +10,75 @@
 
     .hover-overlay {
         position: absolute;
-        background-color: #000000c0;
+        background-color: #00000050;
         bottom: 0;
         left: 0;
         right: 0;
         height: 0;
         overflow: hidden;
         transition: 0.5s ease;
+
+        .hover-overlay-content-box {
+            background-color: transparent;
+            padding-top: 30px;
+
+            .hover-overlay-content {
+                background-color: transparent;
+                width: 100%;
+                padding: 10px;
+                overflow-y: auto;
+            }
+        }
     }
 
-    &:hover .hover-overlay {
-        height: 100%;
+    &:hover {
+        .hover-overlay {
+            height: 100%;
+        }
+
+        .name-date-container {
+            .event-date,
+            .event-description {
+                opacity: 0.15;
+            }
+
+            .event-name {
+                transform: translateY(-35px);
+            }
+        }
     }
-    
-    .date {
+
+    .name-date-container {
         position: absolute;
-        right: 8px;
-        top: 8px;
+        width: 100%;
+        height: 100%;
         background-color: transparent;
-        margin: 0;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.5s;
+
+        .event-date {
+            align-self: flex-end;
+            padding: 8px 8px 0 0;
+            background-color: transparent;
+            margin: 0;
+        }
+
+        .event-name {
+            z-index: 2;
+            background-color: transparent;
+            margin: 8px auto;
+            font-size: 21px;
+            font-weight: 500;
+            transition-delay: 0.3s, 0s;
+            transition: all 0.5s;
+        }
+
+        .event-description {
+            background-color: transparent;
+            margin: auto 20px;
+            text-align: justify;
+        }
     }
 
     .image {
@@ -42,15 +90,15 @@
 }
 
 .above {
-    .image, .hover-overlay {
+    .image,
+    .hover-overlay {
         border-radius: 21px 0 21px 0;
-    }
-} 
-
-.below {
-
-    .image, .hover-overlay {
-        border-radius: 0 21px 0 21px;
     }
 }
 
+.below {
+    .image,
+    .hover-overlay {
+        border-radius: 0 21px 0 21px;
+    }
+}

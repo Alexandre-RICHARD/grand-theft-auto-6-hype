@@ -5,11 +5,13 @@ import "./EventContent.scss";
 interface InformationsList {
     name: string;
     type: string;
-    text: boolean;
-    media: boolean;
-    mediaLink: string;
-    link: string;
+    isText: boolean;
+    isMedia: boolean;
     date: string;
+    description?: string;
+    text?: string;
+    media?: string;
+    link?: string;
 }
 
 interface EventContentProps {
@@ -43,17 +45,48 @@ const EventContent: React.FC<EventContentProps> = ({eventData}) => {
         return dateFinale;
     };
 
+    const addNewLine = (text: string) => {
+        return text.split("\n");
+    };
+
     return (
         <div className="content">
-            <p className="date">
-                {formaterDate(eventData.date)}
-            </p>
-            <img
-                className="image"
-                src={`assets/images/${eventData.mediaLink}.png`}
-            />
+            <div className="name-date-container">
+                <p className="event-date">
+                    {formaterDate(eventData.date)}
+                </p>
+                <p className="event-name">
+                    {eventData.name}
+                </p>
+                <p className="event-description">
+                    {eventData.description}
+                </p>
+            </div>
+            {eventData.isMedia
+                ? (
+                    <img
+                        className="image"
+                        src={`assets/images/${eventData.media}.png`}
+                    />
+                )
+                : null}
             <div className="hover-overlay">
-                Future content
+                <div className="hover-overlay-content-box">
+                    <div className="hover-overlay-content">
+                        {eventData.text
+                            ? addNewLine(eventData.text).map(
+                                (partText, index) => (
+                                    <>
+                                        <p key={index}>
+                                            {partText}
+                                        </p>
+                                        <br />
+                                    </>
+                                )
+                            )
+                            : null}
+                    </div>
+                </div>
             </div>
         </div>
     );
