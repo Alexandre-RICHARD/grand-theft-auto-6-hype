@@ -1,0 +1,26 @@
+// To retrieve default styles and variables
+@import "@styles/index.scss";
+
+.image {
+    width: 100%;
+    height: calc($timeline-event-height - $timeline-event-border-width * 2);
+    background-color: transparent;
+    object-fit: cover;
+}
+
+.youtube {
+    position: absolute;
+    width: 100%;
+    height: calc(($timeline-event-width - $timeline-event-border-width * 2) / 16 * 9);
+    bottom: 0;
+    z-index: 2;
+    background-color: transparent;
+}
+
+.above .youtube {
+    border-radius: 0 0 21px 0;
+}
+
+.below .youtube {
+    border-radius: 0 0 0 21px;
+}

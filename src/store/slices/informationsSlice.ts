@@ -13,7 +13,7 @@ interface InformationsList {
     isText: boolean;
     isMedia: boolean;
     date: string;
-    link: Array<EventLink>;
+    link?: Array<EventLink>;
     description?: string;
     text?: string;
     media?: string;

@@ -1,6 +1,7 @@
 import React from "react";
 import {formatterDate} from "@utilities/formatterDate";
 import EventText from "@parts/EventText/EventText";
+import Media from "@parts/Media/Media";
 
 import "./EventContent.scss";
 
@@ -15,7 +16,7 @@ interface InformationsList {
     isText: boolean;
     isMedia: boolean;
     date: string;
-    link: Array<EventLink>;
+    link?: Array<EventLink>;
     description?: string;
     text?: string;
     media?: string;
@@ -41,42 +42,47 @@ const EventContent: React.FC<EventContentProps> = ({eventData}) => {
             </div>
             {eventData.isMedia
                 ? (
-                    <img
-                        className="image"
-                        src={`assets/images/${eventData.media}.png`}
-                    />
+                    <>
+                        <Media
+                            media={eventData.media}
+                            type={eventData.type}
+                        />
+                    </>
                 )
                 : null}
-            <div className="hover-overlay">
-                <div className="hover-overlay-content-box">
-                    <div className="hover-overlay-content">
-                        <div className="hover-overlay-link">
-                            {
-                                eventData.link.map((el, i) => (
-                                    <React.Fragment key={i}>
-                                        <a
-                                            href={el.link}
-                                            target="blank"
-                                        >
-                                            {el.name}
-                                        </a>
-                                    </React.Fragment>
-                                ))
-                            }
+            {eventData.link && eventData.type !== "youtube"
+                ? (
+                    <div className="hover-overlay">
+                        <div className="hover-overlay-content-box">
+                            <div className="hover-overlay-content">
+                                <div className="hover-overlay-link">
+                                    {eventData.link.map((el, i) => (
+                                        <React.Fragment key={i}>
+                                            <a
+                                                className="link"
+                                                href={el.link}
+                                                target="blank"
+                                            >
+                                                {el.name}
+                                            </a>
+                                        </React.Fragment>
+                                    ))}
+                                </div>
+                                {eventData.text
+                                    ? (
+                                        <>
+                                            <EventText
+                                                link={eventData.link[0].link}
+                                                text={eventData.text}
+                                            />
+                                        </>
+                                    )
+                                    : null}
+                            </div>
                         </div>
-                        {eventData.text
-                            ? (
-                                <>
-                                    <EventText
-                                        link={eventData.link[0].link}
-                                        text={eventData.text}
-                                    />
-                                </>
-                            )
-                            : null}
                     </div>
-                </div>
-            </div>
+                )
+                : null}
         </div>
     );
 };

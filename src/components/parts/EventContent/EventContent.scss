@@ -7,6 +7,8 @@
     height: 100%;
     color: white;
     position: relative;
+    display: flex;
+    flex-direction: column;
 
     .hover-overlay {
         position: absolute;
@@ -33,29 +35,18 @@
                 .hover-overlay-link {
                     display: flex;
                     flex-wrap: wrap;
+                    gap: 0 12px;
                     justify-content: center;
-                    color: #feb26e;
-                    text-decoration: underline 2px;
-                    text-underline-offset: 2px;
-                    transition: all 0;
-    
-                    &:hover {
-                        animation: 1s ease-in-out infinite alternate flashing;
-                    }
-                }
-    
-                @keyframes flashing {
-                    3% {
-                        text-shadow: none;
-                    }
-    
-                    100% {
-                        text-shadow:
-                            0 0 2px #ffffff,
-                            0 0 5px #ffffff,
-                            0 0 9px #feb26e,
-                            0 0 12px #dd829e,
-                            0 0 15px #7458a0;
+
+                    .link {
+                        color: #feb26e;
+                        text-decoration: underline 2px;
+                        text-underline-offset: 2px;
+
+                        &:hover {
+                            animation: 1s ease-in-out infinite alternate
+                                flashing;
+                        }
                     }
                 }
 
@@ -132,13 +123,6 @@
             text-align: justify;
         }
     }
-
-    .image {
-        width: 100%;
-        height: calc($timeline-event-height - $timeline-event-border-width * 2);
-        background-color: transparent;
-        object-fit: cover;
-    }
 }
 
 .above {
@@ -152,5 +136,20 @@
     .image,
     .hover-overlay {
         border-radius: 0 21px 0 21px;
+    }
+}
+
+@keyframes flashing {
+    3% {
+        text-shadow: none;
+    }
+
+    100% {
+        text-shadow:
+            0 0 2px #ffffff,
+            0 0 5px #ffffff,
+            0 0 9px #feb26e,
+            0 0 12px #dd829e,
+            0 0 15px #7458a0;
     }
 }
