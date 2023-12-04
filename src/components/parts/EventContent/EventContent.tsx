@@ -52,6 +52,9 @@ const EventContent: React.FC<EventContentProps> = ({eventData}) => {
                 className="image"
                 src={`assets/images/${eventData.mediaLink}.png`}
             />
+            <div className="hover-overlay">
+                Future content
+            </div>
         </div>
     );
 };

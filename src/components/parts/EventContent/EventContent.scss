@@ -10,6 +10,21 @@
     color: white;
     position: relative;
 
+    .hover-overlay {
+        position: absolute;
+        background-color: #000000c0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 0;
+        overflow: hidden;
+        transition: 0.5s ease;
+    }
+
+    &:hover .hover-overlay {
+        height: 100%;
+    }
+    
     .date {
         position: absolute;
         right: 8px;
@@ -26,10 +41,16 @@
     }
 }
 
-.above .image {
-    border-radius: 21px 0 21px 0;
+.above {
+    .image, .hover-overlay {
+        border-radius: 21px 0 21px 0;
+    }
+} 
+
+.below {
+
+    .image, .hover-overlay {
+        border-radius: 0 21px 0 21px;
+    }
 }
 
-.below .image {
-    border-radius: 0 21px 0 21px;
-}
