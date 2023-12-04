@@ -14,7 +14,7 @@ interface InformationsList {
     isMedia: boolean;
     date: string;
     link: Array<EventLink>;
-    description: string;
+    description?: string;
     text?: string;
     media?: string;
 }

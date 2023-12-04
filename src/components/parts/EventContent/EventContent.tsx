@@ -16,7 +16,7 @@ interface InformationsList {
     isMedia: boolean;
     date: string;
     link: Array<EventLink>;
-    description: string;
+    description?: string;
     text?: string;
     media?: string;
 }
@@ -50,6 +50,20 @@ const EventContent: React.FC<EventContentProps> = ({eventData}) => {
             <div className="hover-overlay">
                 <div className="hover-overlay-content-box">
                     <div className="hover-overlay-content">
+                        <div className="hover-overlay-link">
+                            {
+                                eventData.link.map((el, i) => (
+                                    <React.Fragment key={i}>
+                                        <a
+                                            href={el.link}
+                                            target="blank"
+                                        >
+                                            {el.name}
+                                        </a>
+                                    </React.Fragment>
+                                ))
+                            }
+                        </div>
                         {eventData.text
                             ? (
                                 <>
