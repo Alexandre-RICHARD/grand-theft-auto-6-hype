@@ -1,4 +1,6 @@
 import React from "react";
+import {formatterDate} from "@utilities/formatterDate";
+import EventText from "@parts/EventText/EventText";
 
 import "./EventContent.scss";
 
@@ -8,10 +10,10 @@ interface InformationsList {
     isText: boolean;
     isMedia: boolean;
     date: string;
+    link: Array<string>;
     description?: string;
     text?: string;
     media?: string;
-    link?: string;
 }
 
 interface EventContentProps {
@@ -19,41 +21,11 @@ interface EventContentProps {
 }
 
 const EventContent: React.FC<EventContentProps> = ({eventData}) => {
-    const formaterDate = (dateStr: string) => {
-        interface Options {
-            day: "numeric";
-            month: "numeric" | "2-digit" | "long" | "short" | "narrow";
-            year: "numeric" | "2-digit";
-            hour: "numeric" | "2-digit";
-            minute: "numeric" | "2-digit";
-        }
-
-        const options: Options = {
-            "day": "numeric",
-            "month": "long",
-            "year": "numeric",
-            "hour": "numeric",
-            "minute": "numeric",
-        };
-        const date = new Date(dateStr);
-        let stringDate = date.toLocaleString("fr-FR", options);
-        if (new Date(dateStr).getDate() === 1) {
-            stringDate = stringDate.replace("1", "1er");
-        }
-        const dateFinale = stringDate.replace("à", "-");
-
-        return dateFinale;
-    };
-
-    const addNewLine = (text: string) => {
-        return text.split("\n");
-    };
-
     return (
         <div className="content">
             <div className="name-date-container">
                 <p className="event-date">
-                    {formaterDate(eventData.date)}
+                    {formatterDate(eventData.date)}
                 </p>
                 <p className="event-name">
                     {eventData.name}
@@ -74,15 +46,13 @@ const EventContent: React.FC<EventContentProps> = ({eventData}) => {
                 <div className="hover-overlay-content-box">
                     <div className="hover-overlay-content">
                         {eventData.text
-                            ? addNewLine(eventData.text).map(
-                                (partText, index) => (
-                                    <>
-                                        <p key={index}>
-                                            {partText}
-                                        </p>
-                                        <br />
-                                    </>
-                                )
+                            ? (
+                                <>
+                                    <EventText
+                                        link={eventData.link[0]}
+                                        text={eventData.text}
+                                    />
+                                </>
                             )
                             : null}
                     </div>

@@ -8,10 +8,10 @@ interface InformationsList {
     isText: boolean;
     isMedia: boolean;
     date: string;
+    link: Array<string>;
     description?: string;
     text?: string;
     media?: string;
-    link?: string;
 }
 
 interface InformationsState {
