@@ -1,4 +1,5 @@
 import React from "react";
+import {imageImporter} from "@utilities/imageImporter";
 
 import "./Media.scss";
 
@@ -14,7 +15,7 @@ const Media: React.FC<MediaProps> = ({media, type}) => {
                 return (
                     <img
                         className="image"
-                        src={`assets/images/${media}.png`}
+                        src={imageImporter(media)}
                     />
                 );
             }

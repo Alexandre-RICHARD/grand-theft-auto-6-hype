@@ -11,7 +11,9 @@
 .youtube {
     position: absolute;
     width: 100%;
-    height: calc(($timeline-event-width - $timeline-event-border-width * 2) / 16 * 9);
+    height: calc(
+        ($timeline-event-width - $timeline-event-border-width * 2) / 16 * 9
+    );
     bottom: 0;
     z-index: 2;
     background-color: transparent;
