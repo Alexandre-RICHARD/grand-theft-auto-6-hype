@@ -27,6 +27,13 @@
             height: calc($timeline-event-height + 115px);
             background-color: transparent;
 
+            .diagonale-line {
+                position: absolute;
+                bottom: 0;
+                filter: drop-shadow(0 0 5px #feb26e);
+                fill: #d6d6d6;
+            }
+
             .content-box {
                 position: absolute;
                 border: $timeline-event-border-width solid #d6d6d6;
@@ -41,6 +48,11 @@
         .timeline-event-box.above {
             bottom: calc(50% - $timeline-width / 2);
 
+            .diagonale-line {
+                transform-origin: bottom left;
+                transform: rotate(30deg);
+            }
+
             .content-box {
                 border-radius: 25px 0 25px 0;
 
@@ -54,6 +66,12 @@
             display: flex;
             align-items: end;
             top: calc(50% - $timeline-width / 2);
+
+            .diagonale-line {
+                bottom: 100%;
+                transform-origin: bottom left;
+                transform: rotate(150deg) scaleX(-1);
+            }
 
             .content-box {
                 border-radius: 0 25px 0 25px;

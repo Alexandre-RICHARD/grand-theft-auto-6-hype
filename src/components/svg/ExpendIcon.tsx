@@ -1,7 +1,5 @@
 import React from "react";
 
-import "./ExpendIcon.scss";
-
 const ExpendIcon: React.FC = () => {
     return (
         <svg

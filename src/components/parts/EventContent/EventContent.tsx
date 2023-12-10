@@ -3,8 +3,8 @@ import {formatterDate} from "@utilities/formatterDate";
 import Media from "@parts/Media/Media";
 import HoverOverlay from "@parts/HoverOverlay/HoverOverlay";
 import {EventDataTypes} from "@slices/eventDataSlice";
-import ContractIcon from "@svg/ContractIcon/ContractIcon";
-import ExpendIcon from "@svg/ExpendIcon/ExpendIcon";
+import ContractIcon from "@svg/ContractIcon";
+import ExpendIcon from "@svg/ExpendIcon";
 
 import "./EventContent.scss";
 

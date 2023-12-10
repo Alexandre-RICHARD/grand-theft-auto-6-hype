@@ -3,7 +3,7 @@ import {useAppSelector} from "@store/hooks";
 import {eventState} from "@slices/eventDataSlice";
 
 import "./Timeline.scss";
-import DiagonalLine from "@svg/DiagonalLine/DiagonalLine";
+import DiagonalLine from "@svg/DiagonalLine";
 import EventContent from "@parts/EventContent/EventContent";
 
 const Timeline: React.FC = () => {

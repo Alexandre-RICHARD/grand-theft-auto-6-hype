@@ -1,7 +1,5 @@
 import React from "react";
 
-import "./DiagonalLine.scss";
-
 interface DiagonalLineProps {
     side: string;
 }

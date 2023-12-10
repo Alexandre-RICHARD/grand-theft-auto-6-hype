@@ -1,7 +1,5 @@
 import React from "react";
 
-import "./ContractIcon.scss";
-
 const ContractIcon: React.FC = () => {
     return (
         <svg
