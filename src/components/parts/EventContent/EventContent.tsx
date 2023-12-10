@@ -1,34 +1,54 @@
-import React from "react";
+import React, {useState} from "react";
 import {formatterDate} from "@utilities/formatterDate";
-import EventText from "@parts/EventText/EventText";
 import Media from "@parts/Media/Media";
+import HoverOverlay from "@parts/HoverOverlay/HoverOverlay";
+import {EventDataTypes} from "@slices/eventDataSlice";
+import ContractIcon from "@svg/ContractIcon/ContractIcon";
+import ExpendIcon from "@svg/ExpendIcon/ExpendIcon";
 
 import "./EventContent.scss";
 
-interface EventLink {
-    name: string;
-    link: string;
+interface EventData {
+    eventData: EventDataTypes;
 }
 
-interface InformationsList {
-    name: string;
-    type: string;
-    isText: boolean;
-    isMedia: boolean;
-    date: string;
-    link?: Array<EventLink>;
-    description?: string;
-    text?: string;
-    media?: string;
-}
+const EventContent: React.FC<EventData> = ({eventData}) => {
+    const [
+        isHover,
+        setHover
+    ] = useState(false);
 
-interface EventContentProps {
-    eventData: InformationsList;
-}
-
-const EventContent: React.FC<EventContentProps> = ({eventData}) => {
     return (
-        <div className="content">
+        <div
+            className={`
+            ${"content"}
+            ${eventData.isbigHover ? "hovering" : ""}
+            ${!eventData.isbigHover && isHover ? "hovered" : ""}
+            `}
+        >
+            <div className="expend-hover">
+                <div className="expend-contract-icon">
+                    {!eventData.isbigHover && isHover
+                        ? (
+                            <div
+                                className="expend-contract-icon"
+                                onClick={() => setHover(false)}
+                            >
+                                <ContractIcon />
+                            </div>
+                        )
+                        : !eventData.isbigHover && !isHover
+                            ? (
+                                <div
+                                    className="expend-contract-icon"
+                                    onClick={() => setHover(true)}
+                                >
+                                    <ExpendIcon />
+                                </div>
+                            )
+                            : null}
+                </div>
+            </div>
             <div className="name-date-container">
                 <p className="event-date">
                     {formatterDate(eventData.date)}
@@ -36,9 +56,13 @@ const EventContent: React.FC<EventContentProps> = ({eventData}) => {
                 <p className="event-name">
                     {eventData.name}
                 </p>
-                <p className="event-description">
-                    {eventData.description}
-                </p>
+                {eventData.description
+                    ? (
+                        <p className="event-description">
+                            {eventData.description}
+                        </p>
+                    )
+                    : null}
             </div>
             {eventData.isMedia
                 ? (
@@ -50,39 +74,7 @@ const EventContent: React.FC<EventContentProps> = ({eventData}) => {
                     </>
                 )
                 : null}
-            {eventData.link && eventData.type !== "youtube"
-                ? (
-                    <div className="hover-overlay">
-                        <div className="hover-overlay-content-box">
-                            <div className="hover-overlay-content">
-                                <div className="hover-overlay-link">
-                                    {eventData.link.map((el, i) => (
-                                        <React.Fragment key={i}>
-                                            <a
-                                                className="link"
-                                                href={el.link}
-                                                target="blank"
-                                            >
-                                                {el.name}
-                                            </a>
-                                        </React.Fragment>
-                                    ))}
-                                </div>
-                                {eventData.text
-                                    ? (
-                                        <>
-                                            <EventText
-                                                link={eventData.link[0].link}
-                                                text={eventData.text}
-                                            />
-                                        </>
-                                    )
-                                    : null}
-                            </div>
-                        </div>
-                    </div>
-                )
-                : null}
+            <HoverOverlay eventData={eventData} />
         </div>
     );
 };

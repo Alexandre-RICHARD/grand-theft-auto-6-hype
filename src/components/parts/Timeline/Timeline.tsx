@@ -1,6 +1,6 @@
 import React from "react";
 import {useAppSelector} from "@store/hooks";
-import {informationsState} from "@slices/informationsSlice";
+import {eventState} from "@slices/eventDataSlice";
 
 import "./Timeline.scss";
 import DiagonalLine from "@svg/DiagonalLine/DiagonalLine";
@@ -8,8 +8,7 @@ import EventContent from "@parts/EventContent/EventContent";
 
 const Timeline: React.FC = () => {
     // Use the typed version create in hooks.ts
-    const infoList = useAppSelector(informationsState.InfoList);
-    // const countdownData = useAppSelector(informationsState.CountDown);
+    const infoList = useAppSelector(eventState.EventData);
 
     const invertMouseWheelDirection = (event: React.WheelEvent) => {
         const scrollTarget = event.target as Node;
