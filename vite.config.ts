@@ -21,7 +21,7 @@ export default defineConfig({
     },
     "plugins": [react()],
     "build": {
-        "assetsDir": "assets",
+        "assetsDir": "./",
         "outDir": "./build",
         "cssCodeSplit": false,
         "rollupOptions": {"input": {"app": "./src/index.html"}},
