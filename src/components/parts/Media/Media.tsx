@@ -1,6 +1,6 @@
 import React from "react";
-import {imageImporter} from "@utilities/imageImporter";
 
+import {imageImporter} from "@/IndexImporter";
 import "./Media.scss";
 
 interface MediaProps {
@@ -14,7 +14,7 @@ const Media: React.FC<MediaProps> = ({media, type}) => {
             case "image": {
                 return (
                     <img
-                        className="image"
+                        className="event-image"
                         src={imageImporter(media)}
                     />
                 );

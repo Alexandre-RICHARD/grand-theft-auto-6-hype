@@ -5,6 +5,7 @@
             "type": "post",
             "isMedia": false,
             "isbigHover": true,
+            "isCountdown": false,
             "date": "2022-02-04T16:11:00",
             "link": [
                 {
@@ -24,6 +25,7 @@
             "type": "post",
             "isMedia": false,
             "isbigHover": true,
+            "isCountdown": false,
             "date": "2023-09-19T15:10:00",
             "link": [
                 {
@@ -39,6 +41,7 @@
             "type": "post",
             "isMedia": false,
             "isbigHover": true,
+            "isCountdown": false,
             "date": "2023-06-13T11:54:00",
             "link": [
                 {
@@ -62,6 +65,7 @@
             "type": "post",
             "isMedia": false,
             "isbigHover": true,
+            "isCountdown": false,
             "date": "2023-11-08T14:00:00",
             "link": [
                 {
@@ -81,6 +85,7 @@
             "type": "image",
             "isMedia": true,
             "isbigHover": false,
+            "isCountdown": false,
             "date": "2023-12-01T15:00:00",
             "link": [
                 {
@@ -103,14 +108,40 @@
             "type": "youtube",
             "isMedia": true,
             "isbigHover": false,
+            "isCountdown": false,
             "date": "2023-12-05T15:00:00",
             "link": [
+                {
+                    "name": "Youtube",
+                    "link": "https://www.youtube.com/watch?v=QdBZY2fkU-0"
+                },
+                {
+                    "name": "Twitter",
+                    "link": "https://twitter.com/RockstarGames/status/1732149328779571313"
+                },
                 {
                     "name": "Rockstar Games",
                     "link": "https://www.rockstargames.com/fr/newswire/article/8978kok9385a82/grand-theft-auto-vi-watch-trailer-1-now"
                 }
             ],
             "media": "https://www.youtube.com/embed/QdBZY2fkU-0?si=F858-HopWvmmFGjU"
+        },
+        {
+            "name": "Date de sortie",
+            "type": "image",
+            "isMedia": true,
+            "isbigHover": true,
+            "isCountdown": true,
+            "date": "2025-03-31T23:59:59",
+            "link": [
+                {
+                    "name": "BLABLA",
+                    "link": "https://www.google.fr/"
+                }
+            ],
+            "description": "ON VA VOIR CE QU'ON FAIT DANS CE CAS LA",
+            "media": "grandtheftautovi.png",
+            "class": "whitefull"
         }
     ]
 }

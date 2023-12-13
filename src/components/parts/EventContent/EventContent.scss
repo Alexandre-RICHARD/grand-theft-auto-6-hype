@@ -19,8 +19,9 @@
 
         .name-date-container {
             .event-date,
-            .event-description {
+            .description-countdown {
                 opacity: 0.15;
+                background-color: transparent;
             }
 
             .event-name {
@@ -70,23 +71,14 @@
             font-weight: 500;
         }
 
-        .event-description {
+        .description-countdown {
             background-color: transparent;
             margin: auto 20px;
-            text-align: justify;
+
+            .event-description {
+                text-align: justify;
+            }
         }
-    }
-}
-
-.above {
-    .image {
-        border-radius: 21px 0 21px 0;
-    }
-}
-
-.below {
-    .image {
-        border-radius: 0 21px 0 21px;
     }
 }
 

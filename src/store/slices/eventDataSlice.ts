@@ -12,11 +12,13 @@ export interface EventDataTypes {
     type: string;
     isMedia: boolean;
     isbigHover: boolean;
+    isCountdown: boolean;
     date: string;
     link: Array<EventLink>;
     description?: string;
     text?: string;
     media?: string;
+    class?: string;
 }
 
 interface EventInfoTypes {

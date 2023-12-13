@@ -1,10 +1,9 @@
 import React from "react";
 import {useAppSelector} from "@store/hooks";
-import {eventState} from "@slices/eventDataSlice";
 
+import {eventState} from "@slices/eventDataSlice";
+import {DiagonalLine, EventContent} from "@/IndexImporter";
 import "./Timeline.scss";
-import DiagonalLine from "@svg/DiagonalLine";
-import EventContent from "@parts/EventContent/EventContent";
 
 const Timeline: React.FC = () => {
     // Use the typed version create in hooks.ts
@@ -45,11 +44,15 @@ const Timeline: React.FC = () => {
             <div className="timeline">
                 {infoList.map((event, index) => {
                     const eventGap = index * tlInterval + tlMargin;
+                    const classArray = [
+                        "timeline-event-box",
+                        index % 2 === 0 ? "above" : "below",
+                        event.class ? event.class : ""
+                    ];
+
                     return (
                         <div
-                            className={`${"timeline-event-box"} ${
-                                index % 2 === 0 ? "above" : "below"
-                            }`}
+                            className={classArray.join(" ")}
                             key={index}
                             style={{"left": eventGap}}
                         >

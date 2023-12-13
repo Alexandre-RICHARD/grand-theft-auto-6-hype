@@ -1,11 +1,14 @@
 import React, {useState} from "react";
-import {formatterDate} from "@utilities/formatterDate";
-import Media from "@parts/Media/Media";
-import HoverOverlay from "@parts/HoverOverlay/HoverOverlay";
-import {EventDataTypes} from "@slices/eventDataSlice";
-import ContractIcon from "@svg/ContractIcon";
-import ExpendIcon from "@svg/ExpendIcon";
 
+import {EventDataTypes} from "@slices/eventDataSlice";
+import {
+    formatterDate,
+    ContractIcon,
+    Countdown,
+    ExpendIcon,
+    HoverOverlay,
+    Media
+} from "@/IndexImporter";
 import "./EventContent.scss";
 
 interface EventData {
@@ -18,14 +21,14 @@ const EventContent: React.FC<EventData> = ({eventData}) => {
         setHover
     ] = useState(false);
 
+    const classArray = [
+        "content",
+        eventData.isbigHover ? "hovering" : "",
+        !eventData.isbigHover && isHover ? "hovered" : ""
+    ];
+
     return (
-        <div
-            className={`
-            ${"content"}
-            ${eventData.isbigHover ? "hovering" : ""}
-            ${!eventData.isbigHover && isHover ? "hovered" : ""}
-            `}
-        >
+        <div className={classArray.join(" ")}>
             <div className="expend-hover">
                 <div className="expend-contract-icon">
                     {!eventData.isbigHover && isHover
@@ -58,9 +61,18 @@ const EventContent: React.FC<EventData> = ({eventData}) => {
                 </p>
                 {eventData.description
                     ? (
-                        <p className="event-description">
-                            {eventData.description}
-                        </p>
+                        <div className="description-countdown">
+                            <p className="event-description">
+                                {eventData.description}
+                            </p>
+                            {eventData.isCountdown
+                                ? (
+                                    <>
+                                        <Countdown date={eventData.date} />
+                                    </>
+                                )
+                                : null}
+                        </div>
                     )
                     : null}
             </div>
