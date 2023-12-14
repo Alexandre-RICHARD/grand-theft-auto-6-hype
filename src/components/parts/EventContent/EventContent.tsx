@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 
-import {EventDataTypes} from "@slices/eventDataSlice";
 import {
     formatterDate,
     ContractIcon,
     Countdown,
     ExpendIcon,
+    EventDataTypes,
     HoverOverlay,
     Media
 } from "@/IndexImporter";

@@ -1,7 +1,6 @@
 import React from "react";
 
-import {EventDataTypes} from "@slices/eventDataSlice";
-import {EventText} from "@/IndexImporter";
+import {EventDataTypes, EventText} from "@/IndexImporter";
 import "./HoverOverlay.scss";
 
 interface EventData {

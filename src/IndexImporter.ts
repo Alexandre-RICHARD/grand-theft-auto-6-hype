@@ -25,9 +25,16 @@ export {
 
 // Functions middlewares
 import {calculateCountdown} from "@utilities/calculateCountdown";
+import {compareNumber} from "@utilities/compareNumber";
 import {formatterDate} from "@utilities/formatterDate";
 import {imageImporter} from "@utilities/imageImporter";
 
 export {
-    calculateCountdown, formatterDate, imageImporter
+    calculateCountdown, compareNumber, formatterDate, imageImporter
 };
+
+// Types et interfaces
+import {EventDataTypes} from "@slices/eventDataSlice";
+import {ReturnValueTypes} from "@utilities/calculateCountdown";
+
+export type {EventDataTypes, ReturnValueTypes};

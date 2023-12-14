@@ -1,2 +1,36 @@
 // To retrieve default styles and variables
 @import "@styles/index.scss";
+
+.event-countdown {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    gap: 0 4px;
+
+    .countdown-parts {
+        display: flex;
+        flex-direction: column;
+        width: 70px;
+        text-align: center;
+        background-color: #f0f8ff4b;
+        border-radius: 8px;
+
+        .value-container {
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            gap: 0 3px;
+
+            .value {
+                font-weight: 500;
+                font-size: 25px;
+            }
+        }
+
+        .label {
+            font-weight: 200;
+            font-size: 12px;
+            background-color: transparent;
+        }
+    }
+}
