@@ -1,5 +1,7 @@
+import {ChangeTypes} from "@/IndexImporter";
+
 export const compareNumber = (num1: number, num2: number) => {
-    const comparaison = [];
+    const comparaison: ChangeTypes[] = [];
 
     const num1String = num1.toString();
     const num2String = num2.toString();
@@ -9,12 +11,12 @@ export const compareNumber = (num1: number, num2: number) => {
 
     if (sizeDiff > 0) {
         for (let i = 0; i < sizeDiff; i++) {
-            comparaison.push(true);
+            comparaison.push({"isChanged": true, "how": "higher"});
         }
     }
 
     if (sizeDiff === 0 && sizeMin === 1) {
-        comparaison.push(false);
+        comparaison.push({"isChanged": false, "how": "null"});
     }
 
     for (let i = sizeMin; i > 0; i--) {
@@ -22,9 +24,14 @@ export const compareNumber = (num1: number, num2: number) => {
             num1String[num1String.length - i] ===
             num2String[num2String.length - i]
         ) {
-            comparaison.push(false);
+            comparaison.push({"isChanged": false, "how": "null"});
         } else {
-            comparaison.push(true);
+            const changeType =
+                num1String[num1String.length - i] >
+                num2String[num2String.length - i]
+                    ? "lower"
+                    : "higher";
+            comparaison.push({"isChanged": true, "how": changeType});
         }
     }
 
