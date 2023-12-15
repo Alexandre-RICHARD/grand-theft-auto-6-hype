@@ -53,6 +53,7 @@ const Timeline: React.FC = () => {
                     return (
                         <div
                             className={classArray.join(" ")}
+                            id={event.id}
                             key={index}
                             style={{"left": eventGap}}
                         >

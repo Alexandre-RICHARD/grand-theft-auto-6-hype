@@ -24,7 +24,7 @@ const Media: React.FC<MediaProps> = ({media, type}) => {
                     <iframe
                         allowFullScreen
                         className="youtube"
-                        color="white"
+                        color="red"
                         src={media}
                     />
                 );

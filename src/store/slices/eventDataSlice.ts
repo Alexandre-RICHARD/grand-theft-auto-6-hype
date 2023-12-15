@@ -8,6 +8,7 @@ interface EventLink {
 }
 
 export interface EventDataTypes {
+    id: string;
     name: string;
     type: string;
     isMedia: boolean;

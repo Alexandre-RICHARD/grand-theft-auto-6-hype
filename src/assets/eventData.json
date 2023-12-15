@@ -1,6 +1,7 @@
 {
     "eventData": [
         {
+            "id": "next_opus",
             "name": "Le prochain opus en bonne voie",
             "type": "post",
             "isMedia": false,
@@ -21,6 +22,7 @@
             "text": "Many of you have been asking about a new entry in the Grand Theft Auto series. \n With every new project, our goal is always to significantly move beyond what we've previously delivered. We're pleased to confirm that active development for the next entry in the series is underway. \n We look forward to sharing more as soon as we are ready, so please stay tuned to the Rockstar Newswire for official details. \n On behalf of our entire team, we thank you all for your support and cannot wait to step into the future with you!"
         },
         {
+            "id": "leaks",
             "name": "Rockstar évoque les leaks",
             "type": "post",
             "isMedia": false,
@@ -37,6 +39,7 @@
             "text": "We recently suffered a network intrusion in which an unauthorized third party illegally accessed and downloaded confidential information from our systems, including early development footage for the next Grand Theft Auto. At this time, we do not anticipate any disruption to our live game services nor any long-term effect on the development of our ongoing projects. \n We are extremely disappointed to have any details of our next game shared with you all in this way. Our work on the next Grand Theft Auto game will continue as planned and we remain as committed as ever to delivering an experience to you, our players, that truly exceeds your expectations. We will update everyone again soon and, of course, will properly introduce you to this next game when it is ready. We want to thank everyone for their ongoing support through this situation. \n - The Rockstar Games Team"
         },
         {
+            "id": "trailer-clue",
             "name": "Un indice sur la date du premier trailer",
             "type": "post",
             "isMedia": false,
@@ -61,6 +64,7 @@
             "text": "Now over in your favourite clothes shop in #GTAOnline San Andreas Mercenaries, a GTA V Anniversary Top category... Along with something mysterious that may get some community analysers going.... \n Have you looked at your local alphabet? [...] just drop it in a numbers-to-alphabet ecoder and... \n [...] \n If it’s not happening in October, then I’m going back to 'ONEDAYWILLREVEALALL' and this particular sequence of '12523', aka 5th December 2023 (which is a Tuesday)"
         },
         {
+            "id": "first-trailer-annonce",
             "name": "Annonce d'un trailer prochainement",
             "type": "post",
             "isMedia": false,
@@ -81,6 +85,7 @@
             "text": "Next month marks the 25th anniversary of Rockstar Games. Thanks to the incredible support of our players worldwide, we have had the opportunity to create games we are truly passionate about. \n Without you, none of this would be possible, and we are so grateful to all of you for sharing this journey with us. \n In 1998, Rockstar Games was founded on the idea that video games could come to be as essential to culture as any other form of entertainment, and we hope that we have created games you love in our efforts to be part of that evolution. \n We are very excited to let you know that in early December, we will release the first trailer for the next Grand Theft Auto. We look forward to many more years of sharing these experiences with all of you. \n Thank you, Sam Houser"
         },
         {
+            "id": "first-trailer-date",
             "name": "Annonce officiel du trailer 1",
             "type": "image",
             "isMedia": true,
@@ -104,6 +109,7 @@
             "media": "trailer1.png"
         },
         {
+            "id": "first-trailer-revealed",
             "name": "Premier trailer",
             "type": "youtube",
             "isMedia": true,
@@ -127,6 +133,7 @@
             "media": "https://www.youtube.com/embed/QdBZY2fkU-0?si=F858-HopWvmmFGjU"
         },
         {
+            "id": "estimated-release-date",
             "name": "Date de sortie",
             "type": "image",
             "isMedia": true,

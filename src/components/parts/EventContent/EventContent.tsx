@@ -59,22 +59,25 @@ const EventContent: React.FC<EventData> = ({eventData}) => {
                 <p className="event-name">
                     {eventData.name}
                 </p>
-                {eventData.description
-                    ? (
-                        <div className="description-countdown">
+                <div className="description-countdown">
+                    {eventData.description
+                        ? (
                             <p className="event-description">
                                 {eventData.description}
                             </p>
-                            {eventData.isCountdown
-                                ? (
-                                    <>
-                                        <Countdown date={eventData.date} />
-                                    </>
-                                )
-                                : null}
-                        </div>
-                    )
-                    : null}
+                        )
+                        : null}
+                    {eventData.isCountdown
+                        ? (
+                            <>
+                                <Countdown
+                                    date={eventData.date}
+                                    id={eventData.id}
+                                />
+                            </>
+                        )
+                        : null}
+                </div>
             </div>
             {eventData.isMedia
                 ? (
