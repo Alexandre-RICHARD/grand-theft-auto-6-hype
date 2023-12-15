@@ -47,21 +47,8 @@ const Countdown: React.FC<CountdownProps> = ({id, date}) => {
     });
 
     const applyChangeStyle = (data: ReturnValueTypes) => {
-        if (data.value[5]) {
-            /* eslint-disable @stylistic/max-len */
-            const tr = data.value[5].toString();
-            const tv = data.value[5] >= 10 ? tr[1] : tr[0];
-            if (tv === "0" || tv === "9") {
-                // eslint-disable-next-line no-console
-                console.log(`Seconde à ${data.value[5]}
-Chiffre des unités à ${tv}
-Changement relatif : ${data.change[5][0].isChanged}/${data.change[5][0].how}-${data.change[5][1].isChanged}/${data.change[5][1].how};
-                `);
-            }
-        }
-
         data.change.forEach((el, index) => {
-            if (el[0]) {
+            if (el[0].isChanged) {
                 const decimal = document.querySelector(
                     `#${id} .${timeName[index][0]} .decimal`
                 );
@@ -72,7 +59,7 @@ Changement relatif : ${data.change[5][0].isChanged}/${data.change[5][0].how}-${d
                     }, 100);
                 }
             }
-            if (el[1]) {
+            if (el[1].isChanged) {
                 const unit = document.querySelector(
                     `#${id} .${timeName[index][0]} .unit`
                 );
