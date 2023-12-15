@@ -2,12 +2,7 @@ import React from "react";
 
 import "./EventText.scss";
 
-interface EventTextProps {
-    text: string;
-    link: string;
-}
-
-const EventText: React.FC<EventTextProps> = ({text, link}) => {
+const EventText: React.FC<{text: string; link: string}> = ({text, link}) => {
     const addNewLine = (text: string) => {
         return text.split("\n");
     };

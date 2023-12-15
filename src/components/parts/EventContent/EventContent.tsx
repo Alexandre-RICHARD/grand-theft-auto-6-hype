@@ -11,11 +11,7 @@ import {
 } from "@/IndexImporter";
 import "./EventContent.scss";
 
-interface EventData {
-    eventData: EventDataTypes;
-}
-
-const EventContent: React.FC<EventData> = ({eventData}) => {
+const EventContent: React.FC<{eventData: EventDataTypes}> = ({eventData}) => {
     const [
         isHover,
         setHover

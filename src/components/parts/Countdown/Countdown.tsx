@@ -31,13 +31,8 @@ const timeName = [
     ]
 ];
 
-interface CountdownProps {
-    id: string;
-    date: string;
-}
-
 // eslint-disable-next-line max-lines-per-function
-const Countdown: React.FC<CountdownProps> = ({id, date}) => {
+const Countdown: React.FC<{id: string; date: string}> = ({id, date}) => {
     const [
         countdownData,
         setCountdownData

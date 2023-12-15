@@ -3,11 +3,7 @@ import React from "react";
 import {EventDataTypes, EventText} from "@/IndexImporter";
 import "./HoverOverlay.scss";
 
-interface EventData {
-    eventData: EventDataTypes;
-}
-
-const HoverOverlay: React.FC<EventData> = ({eventData}) => {
+const HoverOverlay: React.FC<{eventData: EventDataTypes}> = ({eventData}) => {
     return (
         <div className="hover-overlay">
             <div className="hover-overlay-content-box">

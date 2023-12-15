@@ -3,12 +3,7 @@ import React from "react";
 import {imageImporter} from "@/IndexImporter";
 import "./Media.scss";
 
-interface MediaProps {
-    media?: string;
-    type: string;
-}
-
-const Media: React.FC<MediaProps> = ({media, type}) => {
+const Media: React.FC<{media?: string; type: string}> = ({media, type}) => {
     const switchCase = (type: string) => {
         switch (type) {
             case "image": {

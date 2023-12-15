@@ -1,10 +1,6 @@
 import React from "react";
 
-interface DiagonalLineProps {
-    side: string;
-}
-
-const DiagonalLine: React.FC<DiagonalLineProps> = (props) => {
+const DiagonalLine: React.FC<{side: string}> = (props) => {
     const {side} = props;
 
     return (
