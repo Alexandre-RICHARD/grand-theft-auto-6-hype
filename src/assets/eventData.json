@@ -149,21 +149,6 @@
             "description": "Fourchette de sortie maximale correspondant à l'année fiscale 2024 boostée dans les prévisions de Take Two",
             "media": "grandtheftautovi.png",
             "class": "whitefull"
-        },
-        {
-            "id": "test",
-            "name": "TEST",
-            "type": "post",
-            "isMedia": true,
-            "isbigHover": true,
-            "isCountdown": true,
-            "date": "2023-12-15T12:00:44",
-            "link": [
-                {
-                    "name": "BLABLA",
-                    "link": "https://www.google.fr/"
-                }
-            ]
         }
     ]
 }

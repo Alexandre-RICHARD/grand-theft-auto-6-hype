@@ -46,6 +46,9 @@ const Countdown: React.FC<CountdownProps> = ({id, date}) => {
         "change": [],
     });
 
+
+    const pastOrFutur = new Date() >= new Date(date) ? "higher" : "lower";
+
     const applyChangeStyle = (data: ReturnValueTypes) => {
         data.change.forEach((el, index) => {
             if (el[0].isChanged) {
@@ -53,18 +56,18 @@ const Countdown: React.FC<CountdownProps> = ({id, date}) => {
                     `#${id} .${timeName[index][0]} .decimal .value`
                 );
                 if (decimal) {
-                    decimal.classList.add("incoming-number", el[0].how);
 
                     const decimalOut = document.createElement("p");
                     decimalOut.textContent = data.value[index][1].toString()[0];
-                    decimalOut.classList.add("outgoing-number", el[0].how);
+                    decimalOut.classList.add("number-out", pastOrFutur);
                     const parent = document.querySelector(
                         `#${id} .${timeName[index][0]} .decimal`
                     );
                     parent?.appendChild(decimalOut);
 
+                    decimal.classList.add("number-in", pastOrFutur);
                     setTimeout(() => {
-                        decimal.classList.remove("incoming-number", el[0].how);
+                        decimal.classList.remove("number-in", pastOrFutur);
                         parent?.removeChild(decimalOut);
                     }, 200);
                 }
@@ -74,19 +77,17 @@ const Countdown: React.FC<CountdownProps> = ({id, date}) => {
                     `#${id} .${timeName[index][0]} .unit .value`
                 );
                 if (unit) {
-                    unit.classList.add("incoming-number", el[1].how);
-
                     const unitOut = document.createElement("p");
                     unitOut.textContent = data.value[index][1].toString()[1];
-                    unitOut.classList.add("outgoing-number", el[1].how);
+                    unitOut.classList.add("number-out", pastOrFutur);
                     const parent = document.querySelector(
                         `#${id} .${timeName[index][0]} .unit`
                     );
                     parent?.appendChild(unitOut);
 
-
+                    unit.classList.add("number-in", pastOrFutur);
                     setTimeout(() => {
-                        unit.classList.remove("incoming-number", el[1].how);
+                        unit.classList.remove("number-in", pastOrFutur);
                         parent?.removeChild(unitOut);
                     }, 200);
                 }
