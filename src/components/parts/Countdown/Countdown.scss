@@ -21,14 +21,46 @@
             display: flex;
             justify-content: center;
             gap: 0 3px;
+            
+            .value-box {
+                position: relative;
+                
+                .value,
+                .outgoing-number {
+                    font-weight: 500;
+                    font-size: 25px;
+                    text-align: center;
+                    width: 17px;
+                    transition: transform 0.1s ease;
+                }
 
-            .value {
-                font-weight: 500;
-                font-size: 25px;
-                text-align: center;
-                width: 17px;
-                transition: transform 0.1s ease;
+                .outgoing-number {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+
+                    &.higher {
+                        animation: couterTransitionNeg 0.2s reverse ease-in-out;
+                    }
+                    
+                    &.lower {
+                        animation: couterTransitionPos 0.2s reverse ease-in-out;
+                    }
+                }
+                
+                .incoming-number {
+                    &.higher {
+                        animation: couterTransitionPos 0.2s normal ease-in-out;
+                    }
+                    
+                    &.lower {
+                        animation: couterTransitionNeg 0.2s normal ease-in-out;
+                    }
+                }
             }
+
         }
 
         .label {
@@ -39,6 +71,25 @@
     }
 }
 
-.animate-changed-number {
-    transform: translateY(-100%);
+@keyframes couterTransitionPos {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-100px);
+    }
+}
+
+@keyframes couterTransitionNeg {
+    0% {
+        transform: translateY(0) rotateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        // transform: translateY(100px);
+        transform: translateY(15px) rotateX(35deg);
+        opacity: 0;
+    }
 }

@@ -260,7 +260,7 @@
         "operator-assignment": "error",
         "prefer-arrow-callback": "error",
         "prefer-const": "error",
-        "prefer-destructuring": "error",
+        "prefer-destructuring": ["error", {"object": true, "array": false}],
         "prefer-object-has-own": "error",
         "quotes": ["error", "double"],
         "require-await": "error",

@@ -6,16 +6,16 @@ export interface ChangeTypes {
 }
 
 export interface ReturnValueTypes {
-    value: number[];
+    value: number[][];
     change: ChangeTypes[][];
 }
 
-const changeArray: ChangeTypes[][] = [];
 
 export const calculateCountdown = (
     date: string,
-    prevValue: number[]
+    prevValue: number[][]
 ): ReturnValueTypes => {
+    const changeArray: ChangeTypes[][] = [];
     let startingPoint = new Date(date);
     let endingPoint = new Date();
 
@@ -68,16 +68,17 @@ export const calculateCountdown = (
     const second = Math.floor(difference % 86400 % 3600 % 60);
 
     const valueArray = [
-        year,
-        month,
-        day,
-        hour,
-        minute,
-        second
+        [year],
+        [month],
+        [day],
+        [hour],
+        [minute],
+        [second]
     ];
 
     prevValue.forEach((prev, index) => {
-        changeArray[index] = compareNumber(prev, valueArray[index]);
+        changeArray[index] = compareNumber(prev[0], valueArray[index][0]);
+        [valueArray[index][1]] = prev;
     });
 
     return {

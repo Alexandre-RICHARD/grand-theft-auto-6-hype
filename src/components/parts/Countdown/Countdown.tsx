@@ -50,24 +50,45 @@ const Countdown: React.FC<CountdownProps> = ({id, date}) => {
         data.change.forEach((el, index) => {
             if (el[0].isChanged) {
                 const decimal = document.querySelector(
-                    `#${id} .${timeName[index][0]} .decimal`
+                    `#${id} .${timeName[index][0]} .decimal .value`
                 );
                 if (decimal) {
-                    decimal.classList.toggle("animate-changed-number");
+                    decimal.classList.add("incoming-number", el[0].how);
+
+                    const decimalOut = document.createElement("p");
+                    decimalOut.textContent = data.value[index][1].toString()[0];
+                    decimalOut.classList.add("outgoing-number", el[0].how);
+                    const parent = document.querySelector(
+                        `#${id} .${timeName[index][0]} .decimal`
+                    );
+                    parent?.appendChild(decimalOut);
+
                     setTimeout(() => {
-                        decimal.classList.toggle("animate-changed-number");
-                    }, 100);
+                        decimal.classList.remove("incoming-number", el[0].how);
+                        parent?.removeChild(decimalOut);
+                    }, 200);
                 }
             }
             if (el[1].isChanged) {
                 const unit = document.querySelector(
-                    `#${id} .${timeName[index][0]} .unit`
+                    `#${id} .${timeName[index][0]} .unit .value`
                 );
                 if (unit) {
-                    unit.classList.toggle("animate-changed-number");
+                    unit.classList.add("incoming-number", el[1].how);
+
+                    const unitOut = document.createElement("p");
+                    unitOut.textContent = data.value[index][1].toString()[1];
+                    unitOut.classList.add("outgoing-number", el[1].how);
+                    const parent = document.querySelector(
+                        `#${id} .${timeName[index][0]} .unit`
+                    );
+                    parent?.appendChild(unitOut);
+
+
                     setTimeout(() => {
-                        unit.classList.toggle("animate-changed-number");
-                    }, 100);
+                        unit.classList.remove("incoming-number", el[1].how);
+                        parent?.removeChild(unitOut);
+                    }, 200);
                 }
             }
         });
@@ -98,11 +119,11 @@ const Countdown: React.FC<CountdownProps> = ({id, date}) => {
                 const elS = el.toString();
 
                 let showed = false;
-                if (el > 0 || index === 5) {
+                if (el[0] > 0 || index === 5) {
                     showed = true;
                 } else if (index !== 0) {
                     for (let i = 0; i < index - 1; i++) {
-                        if (countdownData.value[i] > 0) {
+                        if (countdownData.value[i][0] > 0) {
                             showed = true;
                         }
                     }
@@ -112,7 +133,7 @@ const Countdown: React.FC<CountdownProps> = ({id, date}) => {
                     let [
                         , label
                     ] = timeName[index];
-                    if (index !== 1 && el > 1) {
+                    if (index !== 1 && el[0] > 1) {
                         label += "s";
                     }
                     return (
@@ -121,18 +142,20 @@ const Countdown: React.FC<CountdownProps> = ({id, date}) => {
                             key={index}
                         >
                             <div className="value-container">
-                                {el >= 10
+                                {el[0] >= 10
                                     ? (
-                                        <>
-                                            <p className="value decimal">
+                                        <div className="value-box decimal">
+                                            <p className="value">
                                                 {elS[0]}
                                             </p>
-                                        </>
+                                        </div>
                                     )
                                     : null}
-                                <p className="value unit">
-                                    {el >= 10 ? elS[1] : elS[0]}
-                                </p>
+                                <div className="value-box unit">
+                                    <p className="value">
+                                        {el[0] >= 10 ? elS[1] : elS[0]}
+                                    </p>
+                                </div>
                             </div>
                             <p className="label">
                                 {label}
