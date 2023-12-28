@@ -1,21 +1,15 @@
 import {compareNumber} from "@/IndexImporter";
 
-export interface ChangeTypes {
-    isChanged: boolean;
-    how: "null" | "higher" | "lower";
-}
-
 export interface ReturnValueTypes {
     value: number[][];
-    change: ChangeTypes[][];
+    change: boolean[][];
 }
-
 
 export const calculateCountdown = (
     date: string,
     prevValue: number[][]
 ): ReturnValueTypes => {
-    const changeArray: ChangeTypes[][] = [];
+    const changeArray: boolean[][] = [];
     let startingPoint = new Date(date);
     let endingPoint = new Date();
 

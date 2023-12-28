@@ -7,7 +7,10 @@ const EventText: React.FC<{text: string; link: string}> = ({text, link}) => {
         return text.split("\n");
     };
     return (
-        <blockquote cite={link}>
+        <blockquote
+            cite={link}
+            className="citation"
+        >
             {addNewLine(text).map((partText: string, i: number, array) => (
                 <React.Fragment key={i}>
                     <p>

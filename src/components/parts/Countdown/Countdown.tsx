@@ -41,17 +41,15 @@ const Countdown: React.FC<{id: string; date: string}> = ({id, date}) => {
         "change": [],
     });
 
-
     const pastOrFutur = new Date() >= new Date(date) ? "higher" : "lower";
 
     const applyChangeStyle = (data: ReturnValueTypes) => {
         data.change.forEach((el, index) => {
-            if (el[0].isChanged) {
+            if (el[0]) {
                 const decimal = document.querySelector(
                     `#${id} .${timeName[index][0]} .decimal .value`
                 );
                 if (decimal) {
-
                     const decimalOut = document.createElement("p");
                     decimalOut.textContent = data.value[index][1].toString()[0];
                     decimalOut.classList.add("number-out", pastOrFutur);
@@ -67,7 +65,7 @@ const Countdown: React.FC<{id: string; date: string}> = ({id, date}) => {
                     }, 200);
                 }
             }
-            if (el[1].isChanged) {
+            if (el[1]) {
                 const unit = document.querySelector(
                     `#${id} .${timeName[index][0]} .unit .value`
                 );
@@ -118,7 +116,7 @@ const Countdown: React.FC<{id: string; date: string}> = ({id, date}) => {
                 if (el[0] > 0 || index === 5) {
                     showed = true;
                 } else if (index !== 0) {
-                    for (let i = 0; i < index - 1; i++) {
+                    for (let i = 0; i < index; i++) {
                         if (countdownData.value[i][0] > 0) {
                             showed = true;
                         }

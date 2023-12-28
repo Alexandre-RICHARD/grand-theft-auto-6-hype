@@ -21,10 +21,10 @@
             display: flex;
             justify-content: center;
             gap: 0 3px;
-            
+
             .value-box {
                 position: relative;
-                
+
                 .value,
                 .number-out {
                     font-weight: 500;
@@ -44,23 +44,22 @@
                     &.higher {
                         animation: couterTransitionPos 0.2s normal ease-in-out;
                     }
-                    
+
                     &.lower {
                         animation: couterTransitionNeg 0.2s normal ease-in-out; //! OUI
                     }
                 }
-                
+
                 .number-in {
                     &.higher {
                         animation: couterTransitionNeg 0.2s reverse ease-in-out; //! OUI
                     }
-                    
+
                     &.lower {
                         animation: couterTransitionPos 0.2s reverse ease-in-out;
                     }
                 }
             }
-
         }
 
         .label {
