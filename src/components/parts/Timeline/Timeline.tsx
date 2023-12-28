@@ -1,8 +1,12 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {useAppSelector} from "@store/hooks";
 
 import {eventState} from "@slices/eventDataSlice";
-import {DiagonalLine, EventContent} from "@/IndexImporter";
+import {
+    DiagonalLineLarge,
+    DiagonalLineSmall,
+    EventContent
+} from "@/IndexImporter";
 import "./Timeline.scss";
 
 const Timeline: React.FC = () => {
@@ -35,6 +39,23 @@ const Timeline: React.FC = () => {
         }px`,
     };
 
+    const [
+        windowHeight,
+        setWindowHeight
+    ] = useState(window.innerHeight);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowHeight(window.innerHeight);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
     return (
         <div
             className="timeline-box"
@@ -57,11 +78,32 @@ const Timeline: React.FC = () => {
                             key={index}
                             style={{"left": eventGap}}
                         >
-                            <DiagonalLine
-                                side={index % 2 === 0 ? "above" : "below"}
-                            />
                             <div className="content-box">
                                 <EventContent eventData={event} />
+                            </div>
+                            <div className="diagonale-line-container">
+                                {
+                                    windowHeight > 850
+                                        ? (
+                                            <>
+                                                <DiagonalLineLarge
+                                                    side={index % 2 === 0
+                                                        ? "above"
+                                                        : "below"}
+                                                />
+                                            </>
+                                        )
+                                        : (
+                                            <>
+                                                <DiagonalLineSmall
+                                                    side={index % 2 === 0
+                                                        ? "above"
+                                                        : "below"}
+                                                />
+                                            </>
+                                        )
+                                }
+
                             </div>
                         </div>
                     );

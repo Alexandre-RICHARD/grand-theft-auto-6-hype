@@ -15,12 +15,13 @@ export {
 };
 
 import ContractIcon from "@svg/ContractIcon";
-import DiagonalLine from "@svg/DiagonalLine";
+import DiagonalLineLarge from "@svg/DiagonalLineLarge";
+import DiagonalLineSmall from "@svg/DiagonalLineSmall";
 import ExpendIcon from "@svg/ExpendIcon";
 
 // SVGs components
 export {
-    ContractIcon, DiagonalLine, ExpendIcon
+    ContractIcon, DiagonalLineLarge, DiagonalLineSmall, ExpendIcon
 };
 
 // Functions middlewares
