@@ -35,6 +35,6 @@ export {
 
 // Types et interfaces
 import {EventDataTypes} from "@slices/eventDataSlice";
-import {ReturnValueTypes} from "@utilities/calculateCountdown";
+import {CountdownDataTypes} from "@utilities/calculateCountdown";
 
-export type {EventDataTypes, ReturnValueTypes};
+export type {EventDataTypes, CountdownDataTypes};

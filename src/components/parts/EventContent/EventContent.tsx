@@ -69,6 +69,11 @@ const EventContent: React.FC<{eventData: EventDataTypes}> = ({eventData}) => {
                                 <Countdown
                                     date={eventData.date}
                                     id={eventData.id}
+                                    startingDate={
+                                        eventData.startingDate
+                                            ? eventData.startingDate
+                                            : ""
+                                    }
                                 />
                             </>
                         )

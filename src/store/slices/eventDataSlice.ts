@@ -19,6 +19,7 @@ export interface EventDataTypes {
     description?: string;
     text?: string;
     media?: string;
+    startingDate?: string;
     class?: string;
 }
 

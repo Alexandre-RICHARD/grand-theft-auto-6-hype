@@ -1,84 +1,102 @@
 // To retrieve default styles and variables
 @import "@styles/index.scss";
 
-.event-countdown {
-    background-color: transparent;
-    display: flex;
-    justify-content: space-around;
-    gap: 0 4px;
-
-    .countdown-parts {
+.countdown-container {
+    .event-countdown {
+        background-color: transparent;
         display: flex;
-        flex-direction: column;
-        width: 70px;
-        text-align: center;
-        background-color: #f0f8ff4b;
-        border-radius: 8px;
-        overflow: hidden;
+        justify-content: space-around;
+        gap: 0 4px;
 
-        .value-container {
-            background-color: transparent;
+        .countdown-parts {
             display: flex;
-            justify-content: center;
-            gap: 0 3px;
+            flex-direction: column;
+            width: 70px;
+            text-align: center;
+            background-color: #f0f8ff4b;
+            border-radius: 8px;
+            overflow: hidden;
 
-            .value-box {
-                position: relative;
+            .value-container {
+                background-color: transparent;
+                display: flex;
+                justify-content: center;
+                gap: 0 3px;
 
-                .value,
-                .number-out {
-                    font-weight: 500;
-                    font-size: 25px;
-                    text-align: center;
-                    width: 17px;
-                    transition: transform 0.1s ease;
-                }
+                .value-box {
+                    position: relative;
 
-                .number-out {
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-
-                    &.higher {
-                        animation: couterTransitionPos 0.2s normal ease-in-out;
+                    .value,
+                    .number-out {
+                        font-weight: 500;
+                        font-size: 25px;
+                        text-align: center;
+                        width: 17px;
+                        transition: transform 0.1s ease;
                     }
 
-                    &.lower {
-                        animation: couterTransitionNeg 0.2s normal ease-in-out; //! OUI
-                    }
-                }
+                    .number-out {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
 
-                .number-in {
-                    &.higher {
-                        animation: couterTransitionNeg 0.2s reverse ease-in-out; //! OUI
+                        &.higher {
+                            animation: couterTransitionPos 0.2s normal
+                                ease-in-out;
+                        }
+
+                        &.lower {
+                            animation: couterTransitionNeg 0.2s normal
+                                ease-in-out; //! OUI
+                        }
                     }
 
-                    &.lower {
-                        animation: couterTransitionPos 0.2s reverse ease-in-out;
+                    .number-in {
+                        &.higher {
+                            animation: couterTransitionNeg 0.2s reverse
+                                ease-in-out; //! OUI
+                        }
+
+                        &.lower {
+                            animation: couterTransitionPos 0.2s reverse
+                                ease-in-out;
+                        }
                     }
                 }
             }
-        }
 
-        .label {
-            font-weight: 200;
-            font-size: 12px;
-            background-color: transparent;
+            .label {
+                font-weight: 200;
+                font-size: 12px;
+                background-color: transparent;
+            }
         }
     }
-}
 
-@keyframes couterTransitionPos {
-    0% {
-        transform: translateY(0) rotateX(0);
-        opacity: 1;
+    .progression {
+        text-align: center;
+        padding: 4px 10px;
+        margin: 8px auto;
+        background-color: #8c91964b;
+        color: #d5d7da;
+        width: fit-content;
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 18px;
     }
 
-    100% {
-        transform: translateY(-15px) rotateX(-35deg);
-        opacity: 0;
+    @keyframes couterTransitionPos {
+        0% {
+            transform: translateY(0) rotateX(0);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateY(-15px) rotateX(-35deg);
+            opacity: 0;
+        }
     }
 }
 

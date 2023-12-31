@@ -1,6 +1,6 @@
 import {compareNumber} from "@/IndexImporter";
 
-export interface ReturnValueTypes {
+export interface CountdownDataTypes {
     value: number[][];
     change: boolean[][];
 }
@@ -8,7 +8,7 @@ export interface ReturnValueTypes {
 export const calculateCountdown = (
     date: string,
     prevValue: number[][]
-): ReturnValueTypes => {
+): CountdownDataTypes => {
     const changeArray: boolean[][] = [];
     let startingPoint = new Date(date);
     let endingPoint = new Date();
