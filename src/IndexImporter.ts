@@ -37,19 +37,59 @@ export {
 // ? Functions middlewares
 import {calculateCountdown} from "@utilities/calculateCountdown";
 import {compareNumber} from "@utilities/compareNumber";
+import {countdownChangeStyle} from "@utilities/countdownChangeStyle";
 import {formatterDate} from "@utilities/formatterDate";
 import {imageImporter} from "@utilities/imageImporter";
+import {timeIntervalNames} from "@utilities/timeIntervalNames";
 
 export {
-    calculateCountdown, compareNumber, formatterDate, imageImporter
+    calculateCountdown,
+    compareNumber,
+    countdownChangeStyle,
+    formatterDate,
+    imageImporter,
+    timeIntervalNames
 };
 
 // =============================================================================
 
-// ? Types and interfaces
-import {EventDataTypes} from "@slices/eventDataSlice";
-import {CountdownDataTypes} from "@utilities/calculateCountdown";
+// ? Store and slice
+import {setupStore} from "@store/store";
+import {useAppDispatch, useAppSelector} from "@store/hooks";
+import {eventState} from "@slices/eventDataSlice";
+import {renderWithProviders} from "@tests/wrapperProvider";
 
-export type {EventDataTypes, CountdownDataTypes};
+export {
+    eventState,
+    renderWithProviders,
+    setupStore,
+    useAppDispatch,
+    useAppSelector
+};
+
+// =============================================================================
+
+// ? Assets
+
+import {eventData} from "@assets/eventData.json";
+
+export {eventData};
+
+// =============================================================================
+
+// ? Types and interfaces
+import {CountdownDataTypes} from "@utilities/calculateCountdown";
+import {EventDataTypes} from "@parts/Timeline/EventTypesInterface";
+import type {
+    AppDispatch, AppStore, RootState
+} from "@store/store";
+
+export type {
+    AppDispatch,
+    AppStore,
+    CountdownDataTypes,
+    EventDataTypes,
+    RootState
+};
 
 // =============================================================================

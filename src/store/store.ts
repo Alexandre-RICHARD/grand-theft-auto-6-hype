@@ -1,5 +1,6 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import type {PreloadedState} from "@reduxjs/toolkit";
+
 import eventSlice from "@slices/eventDataSlice";
 
 // Create the root reducer independently to obtain the RootState type

@@ -1,118 +1,32 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from "react";
 
-import {calculateCountdown, CountdownDataTypes} from "@/IndexImporter";
+import {
+    calculateCountdown,
+    CountdownDataTypes,
+    countdownChangeStyle,
+    timeIntervalNames as timeName
+} from "@/IndexImporter";
 import "./Countdown.scss";
 
-const timeName = [
-    [
-        "year",
-        "an"
-    ],
-    [
-        "month",
-        "mois"
-    ],
-    [
-        "day",
-        "jour"
-    ],
-    [
-        "hour",
-        "heure"
-    ],
-    [
-        "minute",
-        "minute"
-    ],
-    [
-        "second",
-        "seconde"
-    ]
-];
-
-// eslint-disable-next-line max-lines-per-function
-const Countdown: React.FC<{id: string; date: string; startingDate: string}> = (
-    {
-        id,
-        date,
-        startingDate,
-    }
-) => {
+const Countdown: React.FC<{id: string; date: string; startingDate: string}> = ({
+    id,
+    date,
+    startingDate,
+}) => {
     const [
         countdownData,
         setCountdownData
     ] = useState<CountdownDataTypes>({
         "value": [],
         "change": [],
+        "purcent": 0,
     });
-
-    const [
-        progressionPurcent,
-        setProgressionPurcent
-    ] = useState(0);
-
-    const pastOrFutur = new Date() >= new Date(date) ? "higher" : "lower";
-
-    const applyChangeStyle = (data: CountdownDataTypes) => {
-        data.change.forEach((el, index) => {
-            if (el[0]) {
-                const decimal = document.querySelector(
-                    `#${id} .${timeName[index][0]} .decimal .value`
-                );
-                if (decimal) {
-                    const decimalOut = document.createElement("p");
-                    decimalOut.textContent = data.value[index][1].toString()[0];
-                    decimalOut.classList.add("number-out", pastOrFutur);
-                    const parent = document.querySelector(
-                        `#${id} .${timeName[index][0]} .decimal`
-                    );
-                    parent?.appendChild(decimalOut);
-
-                    decimal.classList.add("number-in", pastOrFutur);
-                    setTimeout(() => {
-                        decimal.classList.remove("number-in", pastOrFutur);
-                        parent?.removeChild(decimalOut);
-                    }, 200);
-                }
-            }
-            if (el[1]) {
-                const unit = document.querySelector(
-                    `#${id} .${timeName[index][0]} .unit .value`
-                );
-                if (unit) {
-                    const unitOut = document.createElement("p");
-                    unitOut.textContent = data.value[index][1].toString()[1];
-                    unitOut.classList.add("number-out", pastOrFutur);
-                    const parent = document.querySelector(
-                        `#${id} .${timeName[index][0]} .unit`
-                    );
-                    parent?.appendChild(unitOut);
-
-                    unit.classList.add("number-in", pastOrFutur);
-                    setTimeout(() => {
-                        unit.classList.remove("number-in", pastOrFutur);
-                        parent?.removeChild(unitOut);
-                    }, 200);
-                }
-            }
-        });
-    };
 
     const updateTimer = () => {
         setCountdownData((prev) => {
-            const newV = calculateCountdown(date, prev.value);
+            const newV = calculateCountdown(startingDate, date, prev.value);
             return newV;
-        });
-
-        setProgressionPurcent(() => {
-            const progression = Math.floor(
-                (new Date().getTime() - new Date(startingDate).getTime())
-                /
-                (new Date(date).getTime() - new Date(startingDate).getTime())
-                 * 10000
-            ) / 100;
-            return progression;
         });
     };
 
@@ -126,7 +40,7 @@ const Countdown: React.FC<{id: string; date: string; startingDate: string}> = (
     }, []);
 
     useEffect(() => {
-        applyChangeStyle(countdownData);
+        countdownChangeStyle(countdownData, id, date);
     }, [countdownData]);
 
     return (
@@ -187,7 +101,7 @@ const Countdown: React.FC<{id: string; date: string; startingDate: string}> = (
                 })}
             </div>
             <div className="progression">
-                {progressionPurcent}
+                {countdownData.purcent}
                 %
             </div>
         </div>

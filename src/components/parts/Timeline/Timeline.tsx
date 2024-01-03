@@ -1,13 +1,15 @@
 import React from "react";
-import {useAppSelector} from "@store/hooks";
 
-import {eventState} from "@slices/eventDataSlice";
-import {DiagonalLine, EventContent} from "@/IndexImporter";
+import {
+    DiagonalLine,
+    EventContent,
+    eventData,
+    EventDataTypes
+} from "@/IndexImporter";
 import "./Timeline.scss";
 
 const Timeline: React.FC = () => {
-    // Use the typed version create in hooks.ts
-    const infoList = useAppSelector(eventState.EventData);
+    const eventList: EventDataTypes[] = eventData;
 
     const invertMouseWheelDirection = (event: React.WheelEvent) => {
         const scrollTarget = event.target as Node;
@@ -27,11 +29,8 @@ const Timeline: React.FC = () => {
     const tlInterval = tlEventWidth * 0.65;
 
     const widthStyle = {
-        "minWidth": `${
-            (infoList.length - 1) * tlInterval + tlMargin * 4 + tlEventWidth
-        }px`,
         "width": `${
-            (infoList.length - 1) * tlInterval + tlMargin * 4 + tlEventWidth
+            (eventList.length - 1) * tlInterval + tlMargin * 4 + tlEventWidth
         }px`,
     };
 
@@ -42,7 +41,7 @@ const Timeline: React.FC = () => {
             onWheel={invertMouseWheelDirection}
         >
             <div className="timeline">
-                {infoList.map((event, index) => {
+                {eventList.map((event, index) => {
                     const eventGap = index * tlInterval + tlMargin;
                     const classArray = [
                         "timeline-event-box",
@@ -62,9 +61,7 @@ const Timeline: React.FC = () => {
                             </div>
                             <div className="diagonale-line-container">
                                 <DiagonalLine
-                                    side={index % 2 === 0
-                                        ? "above"
-                                        : "below"}
+                                    side={index % 2 === 0 ? "above" : "below"}
                                 />
                             </div>
                         </div>

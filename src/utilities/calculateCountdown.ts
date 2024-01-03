@@ -3,9 +3,11 @@ import {compareNumber} from "@/IndexImporter";
 export interface CountdownDataTypes {
     value: number[][];
     change: boolean[][];
+    purcent: number;
 }
 
 export const calculateCountdown = (
+    startingDate: string,
     date: string,
     prevValue: number[][]
 ): CountdownDataTypes => {
@@ -75,8 +77,16 @@ export const calculateCountdown = (
         [valueArray[index][1]] = prev;
     });
 
+    const progression =
+        Math.floor(
+            (new Date().getTime() - new Date(startingDate).getTime()) /
+                (new Date(date).getTime() - new Date(startingDate).getTime()) *
+                10000
+        ) / 100;
+
     return {
         "value": valueArray,
         "change": changeArray,
+        "purcent": progression,
     };
 };

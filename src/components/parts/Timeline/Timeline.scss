@@ -52,8 +52,12 @@
             .content-box {
                 order: 1;
                 position: relative;
-                top: calc(($timeline-event-height - $timeline-event-height * 0.85) / 2);
-                right: calc(($timeline-event-height - $timeline-event-height * 0.85) / 2);
+                top: calc(
+                    ($timeline-event-height - $timeline-event-height * 0.85) / 2
+                );
+                right: calc(
+                    ($timeline-event-height - $timeline-event-height * 0.85) / 2
+                );
                 border-radius: 25px 0 25px 0;
 
                 .content {
@@ -72,8 +76,12 @@
             .content-box {
                 order: 2;
                 position: relative;
-                bottom: calc(($timeline-event-height - $timeline-event-height * 0.85) / 2);
-                right: calc(($timeline-event-height - $timeline-event-height * 0.85) / 2);
+                bottom: calc(
+                    ($timeline-event-height - $timeline-event-height * 0.85) / 2
+                );
+                right: calc(
+                    ($timeline-event-height - $timeline-event-height * 0.85) / 2
+                );
                 border-radius: 0 25px 0 25px;
 
                 .content {
@@ -97,7 +105,7 @@
                     transform: scale(1);
                 }
             }
-            
+
             .timeline-event-box.above {
                 .content-box {
                     position: static;
