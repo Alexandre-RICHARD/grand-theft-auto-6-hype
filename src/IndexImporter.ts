@@ -1,6 +1,13 @@
-// Basic components
+// =============================================================================
+
+// ? Components
 import App from "@components/App";
+
 export {App};
+
+// =============================================================================
+
+// ? Parts components
 
 import Countdown from "@parts/Countdown/Countdown";
 import EventContent from "@parts/EventContent/EventContent";
@@ -9,21 +16,25 @@ import HoverOverlay from "@parts/HoverOverlay/HoverOverlay";
 import Media from "@parts/Media/Media";
 import Timeline from "@parts/Timeline/Timeline";
 
-// Parts components
 export {
     Countdown, EventContent, EventText, HoverOverlay, Media, Timeline
 };
+
+// =============================================================================
+
+// ? SVGs components
 
 import ContractIcon from "@svg/ContractIcon";
 import DiagonalLine from "@svg/DiagonalLine";
 import ExpendIcon from "@svg/ExpendIcon";
 
-// SVGs components
 export {
     ContractIcon, DiagonalLine, ExpendIcon
 };
 
-// Functions middlewares
+// =============================================================================
+
+// ? Functions middlewares
 import {calculateCountdown} from "@utilities/calculateCountdown";
 import {compareNumber} from "@utilities/compareNumber";
 import {formatterDate} from "@utilities/formatterDate";
@@ -33,8 +44,12 @@ export {
     calculateCountdown, compareNumber, formatterDate, imageImporter
 };
 
-// Types et interfaces
+// =============================================================================
+
+// ? Types and interfaces
 import {EventDataTypes} from "@slices/eventDataSlice";
 import {CountdownDataTypes} from "@utilities/calculateCountdown";
 
 export type {EventDataTypes, CountdownDataTypes};
+
+// =============================================================================
