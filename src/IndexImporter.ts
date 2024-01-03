@@ -10,6 +10,7 @@ export {App};
 // ? Parts components
 
 import Countdown from "@parts/Countdown/Countdown";
+import CountdownParts from "@parts/CountdownParts/CountdownParts";
 import EventContent from "@parts/EventContent/EventContent";
 import EventText from "@parts/EventText/EventText";
 import HoverOverlay from "@parts/HoverOverlay/HoverOverlay";
@@ -17,7 +18,13 @@ import Media from "@parts/Media/Media";
 import Timeline from "@parts/Timeline/Timeline";
 
 export {
-    Countdown, EventContent, EventText, HoverOverlay, Media, Timeline
+    Countdown,
+    CountdownParts,
+    EventContent,
+    EventText,
+    HoverOverlay,
+    Media,
+    Timeline
 };
 
 // =============================================================================

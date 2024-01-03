@@ -3,11 +3,12 @@ import React, {useState, useEffect} from "react";
 
 import {
     calculateCountdown,
-    CountdownDataTypes,
     countdownChangeStyle,
-    timeIntervalNames as timeName
+    CountdownDataTypes,
+    CountdownParts
 } from "@/IndexImporter";
 import "./Countdown.scss";
+
 
 const Countdown: React.FC<{id: string; date: string; startingDate: string}> = ({
     id,
@@ -43,57 +44,31 @@ const Countdown: React.FC<{id: string; date: string; startingDate: string}> = ({
         countdownChangeStyle(countdownData, id, date);
     }, [countdownData]);
 
+    const showOrHideTimeParts = (index: number, value: number) => {
+        let showed = false;
+        if (value > 0 || index === 5) {
+            showed = true;
+        } else if (index !== 0) {
+            for (let i = 0; i < index; i++) {
+                if (countdownData.value[i][0] > 0) {
+                    showed = true;
+                }
+            }
+        }
+        return showed;
+    };
+
     return (
         <div className="countdown-container">
             <div className="event-countdown">
                 {countdownData.value.map((el, index) => {
-                    const elS = el.toString();
-
-                    let showed = false;
-                    if (el[0] > 0 || index === 5) {
-                        showed = true;
-                    } else if (index !== 0) {
-                        for (let i = 0; i < index; i++) {
-                            if (countdownData.value[i][0] > 0) {
-                                showed = true;
-                            }
-                        }
-                    }
-
-                    if (showed) {
-                        let [
-                            , label
-                        ] = timeName[index];
-                        if (index !== 1 && el[0] > 1) {
-                            label += "s";
-                        }
+                    if (showOrHideTimeParts(index, el[0])) {
                         return (
-                            <div
-                                className={
-                                    `countdown-parts ${timeName[index][0]}`
-                                }
+                            <CountdownParts
+                                index={index}
                                 key={index}
-                            >
-                                <div className="value-container">
-                                    {el[0] >= 10
-                                        ? (
-                                            <div className="value-box decimal">
-                                                <p className="value">
-                                                    {elS[0]}
-                                                </p>
-                                            </div>
-                                        )
-                                        : null}
-                                    <div className="value-box unit">
-                                        <p className="value">
-                                            {el[0] >= 10 ? elS[1] : elS[0]}
-                                        </p>
-                                    </div>
-                                </div>
-                                <p className="label">
-                                    {label}
-                                </p>
-                            </div>
+                                timeValue={el}
+                            />
                         );
                     } else {
                         return null;
