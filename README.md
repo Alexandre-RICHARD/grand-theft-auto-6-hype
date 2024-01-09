@@ -3,6 +3,8 @@
 A little project to test some new things. It is made up of a chronological frieze listing the events which so far gives
 us real clues as to the progress of the project and its release date.
 
+The project is accessible from this [link](https://gta-vi-hype.alexandre-richard.fr/)
+
 ## Usage
 
 1. Clone the repository to your local machine.
