@@ -9,7 +9,6 @@ import {
 } from "@/IndexImporter";
 import "./Countdown.scss";
 
-
 const Countdown: React.FC<{id: string; date: string; startingDate: string}> = ({
     id,
     date,
