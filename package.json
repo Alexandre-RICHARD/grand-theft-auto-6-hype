@@ -2,16 +2,16 @@
     "version": "1.0.0",
     "name": "starter-vite-react-redux_toolkit-typescript_scss",
     "scripts": {
-        "start": "vite",
+        "start": "vite --mode dev",
         "test": "vitest",
         "update": "pnpm update || yarn upgrade || npm update",
         "prettier": "prettier --write src/**/*.{js,jsx,ts,tsx,css,scss,json}",
         "lint": "eslint src/**/*.{ts,tsx} --report-unused-disable-directives && echo '\u001b[32mESLint n'a trouvé aucune erreur\u001b[0m'",
         "lint & fix": "eslint src/**/*.{ts,tsx} --fix --report-unused-disable-directives && echo '\u001b[32mESLint n'a trouvé aucune erreur\u001b[0m'",
-        "build": "tsc && vite build",
+        "build": "tsc && vite build --mode prod",
         "build-preview": "vite preview",
-        "clean": "rd /s /q build",
-        "clean:all": "rd /s /q node_modules build & rd /s /q build"
+        "clean": "rd /s /q build 2> nul || rm -rf build",
+        "clean:all": "rd /s /q build node_modules 2> nul || rm -rf build node_modules"
     },
     "dependencies": {
         "react": "^18.2.0",
@@ -24,7 +24,7 @@
         "@testing-library/jest-dom": "^6.2.0",
         "@testing-library/react": "^14.1.2",
         "@testing-library/user-event": "^14.5.2",
-        "@types/node": "^20.10.8",
+        "@types/node": "^20.11.0",
         "@types/react": "^18.2.47",
         "@types/react-dom": "^18.2.18",
         "@types/react-redux": "^7.1.33",
