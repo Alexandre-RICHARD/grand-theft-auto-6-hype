@@ -24,7 +24,7 @@ export default defineConfig({
         "assetsDir": "./",
         "outDir": "./build",
         "cssCodeSplit": false,
-        "rollupOptions": {"input": {"app": "./src/index.html"}},
+        "rollupOptions": {"input": {"app": "./index.html"}},
     },
     "test": {
         "globals": true,
@@ -32,5 +32,4 @@ export default defineConfig({
         "setupFiles": ["src/tests/setup.ts"],
         "env": {"IS_REACT_ACT_ENVIRONMENT": "true"},
     },
-    "server": {"open": "./src/index.html"},
 });
