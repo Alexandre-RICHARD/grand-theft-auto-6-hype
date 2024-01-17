@@ -1,6 +1,10 @@
 {
     "version": "1.0.0",
     "name": "starter-vite-react-redux_toolkit-typescript_scss",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Alexandre-RICHARD/grand-theft-auto-6-hype"
+    },
     "scripts": {
         "start": "vite --open --mode dev",
         "test": "vitest --mode dev",
