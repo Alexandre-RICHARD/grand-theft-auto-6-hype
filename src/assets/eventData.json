@@ -138,8 +138,8 @@
             "type": "image",
             "isMedia": true,
             "isbigHover": true,
-            "isCountdown": true,
-            "date": "2025-03-31T23:59:59",
+            "isCountdown": false,
+            "date": "2023-05-17T10:30:00",
             "link": [
                 {
                     "name": "Take Two",
@@ -148,9 +148,65 @@
             ],
             "description": "Fourchette de sortie maximale correspondant à l'année fiscale 2025 (01/04/24 - 31/03/25) boostée dans les prévisions de Take Two",
             "text": "Fiscal 2025 is a highly anticipated year for our Company. For the last several years, we have been preparing our business to release an incredibly robust pipeline of projects that we believe will take our company to even greater levels of success. In Fiscal 2025, we expect to enter this new era by launching several groundbreaking titles that we believe will set new standards in our industry and enable us to achieve over $8 billion in Net Bookings and over $1 billion in Adjusted Unrestricted Operating Cash Flow. We expect to sustain this momentum by delivering even higher levels of operating results in Fiscal 2026 and beyond. \n [...] \n We made the decision to cancel several unannounced titles in development, which we believe will enable us to tighten our focus and reallocate resources to projects for which our creative teams have higher levels of conviction and expectations of success. \n [...] \n As we continue to pursue our mission to be the most creative, the most innovative, and the most efficient entertainment company in the world, we do so incredibly well-positioned with a broader portfolio of owned intellectual property, a deeper pool of the industry’s top creative talent, and the sound infrastructure to capitalize on the vast opportunities on the horizon. As we execute on our 5 strategy, we believe that we can increase meaningfully our scale and prominence within the industry, grow margins, and achieve record-breaking operating results for Fiscal 2025 and beyond. \n [...] \n As we approach this significant inflection point in our business, we believe our expanding scale and margins will generate industry-leading returns for our shareholders. \n [...] \n I’d like to acknowledge that our current forecasts for Fiscal 2024 reflect a continuation of the challenging economic environment, as well as an extension of the development timelines for several high-profile and long-awaited titles. While this affects our expectations for our current fiscal year, our high degree of visibility into our pipeline gives us confidence that we are approaching a significant inflection point in our business where we will achieve new record levels of results for our business next year and beyond. ",
-            "media": "grand-theft-auto-vi-logo.png",
-            "startingDate": "2023-12-05T15:00:00",
+            "media": "grand-theft-auto-vi-logo-2025.png",
             "class": "whitefull"
+        },
+        {
+            "id": "take-two-announce-fall-2025",
+            "name": "Prévision de Take Two",
+            "type": "post",
+            "isMedia": false,
+            "isbigHover": true,
+            "isCountdown": false,
+            "date": "2025-02-06T10:30:00",
+            "link": [
+                {
+                    "name": "Take Two",
+                    "link": "https://ir.take2games.com/static-files/b830ed82-c9a4-4543-a10f-85bb29f8c878"
+                }
+            ],
+            "description": "Take Two semble très confiant et confirme dans le calendrier des sorties GTA 6 à l'automne 2025.",
+            "text": "Looking ahead, this calendar year is shaping up to be one of the strongest ever for Take-Two, as Sid Meier’s Civilization VII launched in Early Access today, with the official launch on February 11th, and we also plan to release Mafia: The Old Country in the Summer, Grand Theft Auto VI in the Fall, and Borderlands 4 before year-end. \n [...] \n Looking ahead, we are highly optimistic about our planned pipeline for Fiscal 2026, which includes Grand Theft Auto VI launching this Fall. "
+        },
+        {
+            "id": "report-and-relase-date",
+            "name": "Annonce du report et de la date de sortie",
+            "type": "image",
+            "isMedia": true,
+            "isbigHover": true,
+            "isCountdown": false,
+            "date": "2023-11-08T14:00:00",
+            "link": [
+                {
+                    "name": "Rockstar Games",
+                    "link": "https://www.rockstargames.com/newswire/article/258aa538o412ok/grand-theft-auto-vi-is-now-coming-may-26-2026"
+                },
+                {
+                    "name": "Twitter",
+                    "link": "https://x.com/RockstarGames/status/1918265468076605706"
+                },
+                {
+                    "name": "Instagram",
+                    "link": "https://www.instagram.com/p/DJJkArVAj-w/"
+                }
+            ],
+            "description": "Rockstar Games annonce officiellement le report de GTA VI de 2025 à 2026 en précisant une date de sortie au 26 mai.",
+            "text": "Hi everyone, \n Grand Theft Auto VI is now set to release on May 26, 2026. \n We are very sorry that this is later than you expected. The interest and excitement surrounding a new Grand Theft Auto has been truly humbling for our entire team. We want to thank you for your support and your patience as we work to finish the game. \n With every game we have released, the goal has always been to try and exceed your expectations, and Grand Theft Auto VI is no exception. We hope you understand that we need this extra time to deliver at the level of quality you expect and deserve. \n We look forward to sharing more information with you soon. \n Sincerely, Rockstar Games",
+            "media": "grand-theft-auto-vi-logo-2026.png",
+            "class": "whitefull"
+        },
+        {
+            "id": "release-countdown",
+            "name": "Sortie de Grand Theft Auto VI",
+            "type": "post",
+            "isMedia": false,
+            "isbigHover": true,
+            "isCountdown": true,
+            "date": "2026-05-26T00:00:00",
+            "link": [],
+            "description": "Date de sortie officielle de Grand Theft Auto VI",
+            "text": "",
+            "startingDate": "2023-12-05T15:00:00"
         }
     ]
 }

@@ -1,6 +1,7 @@
 // =============================================================================
 
 // ? Components
+
 import App from "@components/App";
 
 export {App};
@@ -41,7 +42,8 @@ export {
 
 // =============================================================================
 
-// ? Functions middlewares
+// ? Functions utilities
+
 import {calculateCountdown} from "@utilities/calculateCountdown";
 import {compareNumber} from "@utilities/compareNumber";
 import {countdownChangeStyle} from "@utilities/countdownChangeStyle";
@@ -61,6 +63,7 @@ export {
 // =============================================================================
 
 // ? Store and slice
+
 import {setupStore} from "@store/store";
 import {useAppDispatch, useAppSelector} from "@store/hooks";
 import {eventState} from "@slices/eventDataSlice";
@@ -85,6 +88,7 @@ export {eventData};
 // =============================================================================
 
 // ? Types and interfaces
+
 import {CountdownDataTypes} from "@utilities/calculateCountdown";
 import {EventDataTypes} from "@parts/Timeline/EventTypesInterface";
 import type {
