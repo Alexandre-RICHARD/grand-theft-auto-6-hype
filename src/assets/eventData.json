@@ -172,7 +172,7 @@
             "id": "report-and-relase-date",
             "name": "Annonce du report et de la date de sortie",
             "type": "image",
-            "isMedia": true,
+            "isMedia": false,
             "isbigHover": true,
             "isCountdown": false,
             "date": "2025-05-02T13:25:00",
@@ -191,22 +191,46 @@
                 }
             ],
             "description": "Rockstar Games annonce officiellement le report de GTA VI de 2025 à 2026 en précisant une date de sortie au 26 mai.",
-            "text": "Hi everyone, \n Grand Theft Auto VI is now set to release on May 26, 2026. \n We are very sorry that this is later than you expected. The interest and excitement surrounding a new Grand Theft Auto has been truly humbling for our entire team. We want to thank you for your support and your patience as we work to finish the game. \n With every game we have released, the goal has always been to try and exceed your expectations, and Grand Theft Auto VI is no exception. We hope you understand that we need this extra time to deliver at the level of quality you expect and deserve. \n We look forward to sharing more information with you soon. \n Sincerely, Rockstar Games",
-            "media": "grand-theft-auto-vi-logo-2026.png",
-            "class": "whitefull"
+            "text": "Hi everyone, \n Grand Theft Auto VI is now set to release on May 26, 2026. \n We are very sorry that this is later than you expected. The interest and excitement surrounding a new Grand Theft Auto has been truly humbling for our entire team. We want to thank you for your support and your patience as we work to finish the game. \n With every game we have released, the goal has always been to try and exceed your expectations, and Grand Theft Auto VI is no exception. We hope you understand that we need this extra time to deliver at the level of quality you expect and deserve. \n We look forward to sharing more information with you soon. \n Sincerely, Rockstar Games"
+        },
+        {
+            "id": "second-trailer-revealed",
+            "name": "Second trailer et un dossier",
+            "type": "youtube",
+            "isMedia": true,
+            "isbigHover": false,
+            "isCountdown": false,
+            "date": "2025-05-06T13:25:00",
+            "link": [
+                {
+                    "name": "Youtube",
+                    "link": "https://www.youtube.com/watch?v=VQRLujxTm3c"
+                },
+                {
+                    "name": "Twitter",
+                    "link": "https://x.com/RockstarGames/status/1919746311382851812"
+                },
+                {
+                    "name": "Dossier sur Rockstar Games",
+                    "link": "https://www.rockstargames.com/VI"
+                }
+            ],
+            "media": "https://www.youtube.com/embed/VQRLujxTm3c?si=kONmbNQvSjpQyaD9"
         },
         {
             "id": "release-countdown",
             "name": "Sortie de Grand Theft Auto VI",
-            "type": "post",
-            "isMedia": false,
+            "type": "image",
+            "isMedia": true,
             "isbigHover": true,
             "isCountdown": true,
             "date": "2026-05-26T00:00:00",
             "link": [],
             "description": "Date de sortie officielle de Grand Theft Auto VI",
             "text": "",
-            "startingDate": "2023-12-05T15:00:00"
+            "startingDate": "2023-12-05T15:00:00",
+            "media": "grand-theft-auto-vi-logo-2026.png",
+            "class": "whitefull"
         }
     ]
 }
